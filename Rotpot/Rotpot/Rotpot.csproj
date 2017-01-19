@@ -42,7 +42,7 @@
     <Compile Include="src\level\entities\Entity.cs" />
     <Compile Include="src\level\Level.cs" />
     <Compile Include="src\level\Tile.cs" />
-    <Compile Include="src\main\GameRoot.cs" />
+    <Compile Include="src\main\Main.cs" />
     <Compile Include="src\main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\utils\Animation.cs" />

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Rotpot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,7 @@ namespace Svennebanan.gui
 
         public void Draw(SpriteBatch batch)
         {
-            batch.Draw(main.images.GetImage(textureID), position, Color.White);
+            //batch.Draw(main.images.GetImage(textureID), position, Color.White);
         }
     }
 }

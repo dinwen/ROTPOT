@@ -7,12 +7,12 @@ namespace Rotpot
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class GameRoot : Game
+    public class Main : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public GameRoot()
+        public Main()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";

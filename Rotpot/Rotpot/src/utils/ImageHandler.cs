@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace Svennebanan
     public class ImageHandler
     {
 
-        public Dictionary<int, Texture2D> images = new Dictionary<int, Texture2D>();
+        private Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
 
-        public void AddImage(int id, Texture2D image)
+        public void AddImage(string name, Texture2D image)
         {
-            images.Add(id, image);
+            images.Add(name, image);
         }
 
-        public Texture2D GetImage(int id)
+        public Texture2D GetImage(string name)
         {
-            return images[id];
+            return images[name];
         }
 
     }

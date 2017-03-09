@@ -23,3 +23,6 @@ C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Sh
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\obj\x86\Debug\Rotpot.exe
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\obj\x86\Debug\Rotpot.pdb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\test.txt
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\grass.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\tiles.xnb

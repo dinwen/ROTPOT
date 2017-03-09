@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jonru/OneDrive/Dokument/GitHub/ROTPOT/Rotpot/Rotpot/Content/tiles.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/tiles.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/grass.png</File>
   </SourceFiles>
 </SourceFileCollection>

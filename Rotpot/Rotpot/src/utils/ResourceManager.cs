@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Svennebanan
 {
-    public class ResourceHandler
+    public class ResourceManager
     {
 
         public ImageHandler images;
         public TileHandler tiles;
 
-        public ResourceHandler()
+        public ResourceManager()
         {
             images = new ImageHandler();
             tiles = new TileHandler();
@@ -23,6 +23,7 @@ namespace Svennebanan
         public void LoadContent(ContentManager content)
         {
             images.AddImage("tile_sheet", content.Load<Texture2D>("tiles"));
+            images.AddImage("grass", content.Load<Texture2D>("grass"));
 
             tiles.AddTile(new Tile(0, 0, true));
             tiles.AddTile(new Tile(1, 0, true));

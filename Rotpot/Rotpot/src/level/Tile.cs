@@ -10,35 +10,22 @@ namespace Svennebanan
 {
     public class Tile
     {
+
         public Vector2 position;
-        public Rectangle texture;
-        private Rectangle collision;
-        private bool solid;
+        public Rectangle texturePosition;
+        public bool solid;
 
-        public static Dictionary<int, Tile> tiles = new Dictionary<int, Tile>();
-
-        public Tile(bool solid, Rectangle texture)
+        public Tile(int texPosX, int texPosY, bool solid)
         {
+            this.texturePosition = new Rectangle(texPosX * 32, texPosY * 32, 32, 32);
             this.solid = solid;
-            this.texture = texture;
         }
 
-        public Tile(int x, int y, Tile tile)
+        public Tile(Vector2 position, Tile tile)
         {
-            this.position = new Vector2(x, y);
+            this.position = position;
+            this.texturePosition = tile.texturePosition;
             this.solid = tile.solid;
-            this.texture = tile.texture;
-            this.collision = new Rectangle(x, y, 32, 32);
-        }
-
-        public static void AddTile(int id, Tile tile)
-        {
-            tiles.Add(id, tile);
-        }
-
-        public Rectangle GetBounds()
-        {
-            return collision;
         }
 
     }

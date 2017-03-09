@@ -9,22 +9,19 @@ namespace Svennebanan
     public class Level
     {
 
-        public int width, height;
-
         public Main main;
+        public ResourceHandler resources;
         private LevelLoader levelLoader;
 
         public List<Entity> entities = new List<Entity>();
         public List<Tile> tiles = new List<Tile>();
 
-        public int winner = 0;
-        public int gameOverCooldown = 60 * 5;
-
-        public Level(Main main)
+        public Level(Main main, ResourceHandler resources)
         {
             this.main = main;
-            this.levelLoader = new LevelLoader("Content/levels/daniel.txt");
-            this.tiles = levelLoader.loadedTiles;
+            this.resources = resources;
+            levelLoader = new LevelLoader(resources, "Content/levels/test.txt");
+            tiles = levelLoader.GetLevelTiles();
         }
 
         public void AddEntity(Entity e)
@@ -57,9 +54,9 @@ namespace Svennebanan
                 entities[i].Draw(batch);
             }
 
-            for (int i = 0; i < tiles.Count; i++)
+            foreach (Tile t in tiles)
             {
-                //batch.Draw(main.images.GetImage(100), tiles[i].position, tiles[i].texture, Color.White);
+                batch.Draw(resources.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White);
             }
         }
 

@@ -28,6 +28,7 @@ namespace Svennebanan
 
             entityManager = new EntityManager(this);
             creationManager = new CreationManager(this);
+
         }
 
         public void Update()

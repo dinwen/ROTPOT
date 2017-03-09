@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Rotpot.src.level.entities;
+using Rotpot.src.utils;
 using Svennebanan;
 
 namespace Svennebanan
@@ -9,12 +11,13 @@ namespace Svennebanan
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        ResourceHandler resources;
+
+        ResourceManager resources;
         Level level;
 
         public Main()
         {
-            resources = new ResourceHandler();
+            resources = new ResourceManager();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
@@ -22,7 +25,7 @@ namespace Svennebanan
         protected override void Initialize()
         {
             base.Initialize();
-            level = new Level(this, resources);
+            level = new Level(resources);
         }
 
         protected override void LoadContent()

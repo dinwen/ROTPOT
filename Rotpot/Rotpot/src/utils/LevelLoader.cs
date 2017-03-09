@@ -12,10 +12,10 @@ namespace Svennebanan
     {
 
         private List<Tile> loadedTiles = new List<Tile>();
-        private ResourceHandler resources;
+        private ResourceManager resources;
         private Vector2 size = Vector2.Zero;
 
-        public LevelLoader(ResourceHandler resources, string path)
+        public LevelLoader(ResourceManager resources, string path)
         {
             this.resources = resources;
             Load(path);

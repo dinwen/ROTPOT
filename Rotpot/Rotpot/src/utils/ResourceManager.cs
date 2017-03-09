@@ -24,6 +24,10 @@ namespace Svennebanan
         {
             images.AddImage("tile_sheet", content.Load<Texture2D>("tiles"));
             images.AddImage("grass", content.Load<Texture2D>("grass"));
+            images.AddImage("interface", content.Load<Texture2D>("interface"));
+            images.AddImage("powerbar", content.Load<Texture2D>("powerbar"));
+            images.AddImage("healthbar", content.Load<Texture2D>("healthbar"));
+
 
             tiles.AddTile(new Tile(0, 0, true));
             tiles.AddTile(new Tile(1, 0, true));

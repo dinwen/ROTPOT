@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SpelProjekt.src.utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +9,23 @@ using System.Threading.Tasks;
 
 namespace Rotpot.src.level.entities
 {
-    public class EntityPlayer
+    public class EntityPlayer : EntityLiving
     {
 
-        public EntityPlayer()
+        public Animation moving;
+
+        public EntityPlayer(Vector2 position)
+        {
+            this.position = position;
+        }
+
+        public override void Update()
         {
 
         }
 
-        public void Update(GameTime gameTime)
+        public override void Draw(SpriteBatch batch)
         {
-
-        }
-
-        public void Draw(SpriteBatch batch)
-        {
-
         }
 
     }

@@ -11,6 +11,10 @@ namespace Svennebanan
     public class Entity
     {
 
+        public Entity nextEntity;
+        public static Entity firstEntity;
+        public int id;
+
         protected Vector2 position;
         protected Level level;
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -28,11 +29,12 @@ namespace Svennebanan
             images.AddImage("powerbar", content.Load<Texture2D>("powerbar"));
             images.AddImage("healthbar", content.Load<Texture2D>("healthbar"));
             images.AddImage("gris", content.Load<Texture2D>("gris"));
-            
-            tiles.AddTile(new Tile(0, 0, true));
-            tiles.AddTile(new Tile(1, 0, true));
-            tiles.AddTile(new Tile(2, 0, true));
-            tiles.AddTile(new Tile(3, 0, true));
+            images.AddImage("player", content.Load<Texture2D>("player"));
+
+            tiles.AddTile(new Tile(0, 0, new Rectangle(64, 0, 64, 64), true));
+            tiles.AddTile(new Tile(1, 0, new Rectangle(0, 0, 128, 64), true));
+            tiles.AddTile(new Tile(2, 0, new Rectangle(0, 0, 64, 64), true));
+            tiles.AddTile(new Tile(3, 0, new Rectangle(0, 0, 128, 128), true));
         }
 
     }

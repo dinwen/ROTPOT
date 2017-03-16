@@ -14,7 +14,7 @@ namespace Svennebanan
         SpriteBatch spriteBatch;
 
         ResourceManager resources;
-        private Camera camera;
+        public static Camera camera;
         private InputHandler input;
         Level level;
 
@@ -22,8 +22,8 @@ namespace Svennebanan
         {
             resources = new ResourceManager();
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 1920;
-            graphics.PreferredBackBufferHeight = 1080;
+            graphics.PreferredBackBufferWidth = 1920 / 2;
+            graphics.PreferredBackBufferHeight = 1080 / 2;
             Content.RootDirectory = "Content";
         }
 
@@ -33,6 +33,7 @@ namespace Svennebanan
             level = new Level(resources);
 
             camera = new Camera(GraphicsDevice.Viewport);
+            camera.Zoom = 0.7f;
             input = new InputHandler();
         }
 
@@ -55,10 +56,7 @@ namespace Svennebanan
             level.Update(gameTime);
             input.Update();
 
-            if (InputHandler.left) camera.Move(-5, 0);
-            if (InputHandler.right) camera.Move(5, 0);
-            if (InputHandler.jump) camera.Move(0, 5);
-            if (InputHandler.attack) camera.Move(0, -5);
+            
 
 
             base.Update(gameTime);
@@ -68,7 +66,7 @@ namespace Svennebanan
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.FrontToBack);
+            spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.Immediate);
             level.Draw(spriteBatch);
             spriteBatch.End();
 

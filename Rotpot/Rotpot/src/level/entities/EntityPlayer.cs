@@ -33,7 +33,7 @@ namespace Rotpot.src.level.entities
             else
             {
                 if (velocity.Y > 0) velocity.Y = 0f;
-                if (InputHandler.attack) velocity.Y = -20;
+                if (InputHandler.attack) velocity.Y = -23;
             }
 
             if (InputHandler.left) position += new Vector2(-movementSpeed, 0);
@@ -45,10 +45,8 @@ namespace Rotpot.src.level.entities
             //position += velocity;
 
             animation.Update();
-            if(health == 0)
-            {
 
-            }
+            if (position.Y > 7000) health-= 3;
 
             CheckCollision();
         }

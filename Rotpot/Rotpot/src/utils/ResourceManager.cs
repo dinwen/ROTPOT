@@ -23,7 +23,7 @@ namespace Svennebanan
 
         public void LoadContent(ContentManager content)
         {
-            images.AddImage("tile_sheet", content.Load<Texture2D>("TILESHEET128X128"));
+            images.AddImage("tile_sheet", content.Load<Texture2D>("TILESHEET128X128b"));
             images.AddImage("grass", content.Load<Texture2D>("grass"));
             images.AddImage("interface", content.Load<Texture2D>("interface"));
             images.AddImage("powerbar", content.Load<Texture2D>("powerbar"));
@@ -35,6 +35,12 @@ namespace Svennebanan
             tiles.AddTile(new Tile(1, 0, new Rectangle(0, 0, 128, 64), true));
             tiles.AddTile(new Tile(2, 0, new Rectangle(0, 0, 64, 64), true));
             tiles.AddTile(new Tile(3, 0, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(4, 0, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(0, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(1, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(2, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(3, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(4, 1, new Rectangle(0, 0, 128, 128), true));
         }
 
     }

@@ -25,9 +25,14 @@ namespace Svennebanan
             this.level = level;
         }
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
 
+        }
+
+        public Vector2 GetPosition()
+        {
+            return position;
         }
 
         public virtual void Draw(SpriteBatch batch)

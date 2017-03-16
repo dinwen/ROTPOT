@@ -33,12 +33,22 @@ namespace Rotpot.src.level.entities
             health -= damage;
         }
 
-        public void Update(GameTime gameTime)
+        public float GetHealth()
+        {
+            return health;
+        }
+
+        public float GetStrength()
+        {
+            return strength;
+        }
+
+        public override void Update(GameTime gameTime)
         {
 
         }
 
-        public void Draw(SpriteBatch batch)
+        public override void Draw(SpriteBatch batch)
         {
 
         }

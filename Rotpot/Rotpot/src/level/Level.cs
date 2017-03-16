@@ -23,12 +23,12 @@ namespace Svennebanan
         public Level(ResourceManager resources)
         {
             this.resourceManager = resources;
-            levelLoader = new LevelLoader(resources, "Content/levels/test.txt");
+            levelLoader = new LevelLoader(resources, "Content/levels/TestLevelll.txt");
             tiles = levelLoader.GetLevelTiles();
 
             entityManager = new EntityManager(this);
             creationManager = new CreationManager(this);
-
+            creationManager.CreateEntity(new EntityPlayer(new Vector2(100, 100)), 0);
         }
 
         public void Update()

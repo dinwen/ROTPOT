@@ -16,16 +16,19 @@ namespace Rotpot.src.level.entities
 
         public EntityPlayer(Vector2 position)
         {
+            moving = new Animation(5, 0, 0, 128, 128, 10, 1, true);
             this.position = position;
         }
 
         public override void Update()
         {
-
+            moving.Update();
         }
 
         public override void Draw(SpriteBatch batch)
         {
+            batch.Draw(level.resourceManager.images.GetImage("gris"), position, moving.GetRectangle(), Color.White);
+
         }
 
     }

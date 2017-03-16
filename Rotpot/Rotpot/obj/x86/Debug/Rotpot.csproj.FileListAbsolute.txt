@@ -64,3 +64,5 @@ C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Co
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\powerbar.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\TILESHEET128X128.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\player.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level11.txt
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\TILESHEET128X128b.xnb

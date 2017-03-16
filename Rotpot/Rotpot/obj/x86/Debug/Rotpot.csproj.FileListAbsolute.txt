@@ -53,9 +53,7 @@ C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Sh
 C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\gris.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\healthbar.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\interface.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\powerbar.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\TILESHEET128X128.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\TestLevelll.txt
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\healthbar.xnb
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\interface.xnb
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\powerbar.xnb
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\obj\x86\Debug\Rotpot.csprojResolveAssemblyReference.cache

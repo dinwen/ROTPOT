@@ -15,6 +15,8 @@ namespace Rotpot.src.level.entities
         protected float strength;
         protected float movementSpeed;
 
+
+
         public EntityLiving()
         {
 
@@ -31,7 +33,17 @@ namespace Rotpot.src.level.entities
             health -= damage;
         }
 
-        public override void Update()
+        public float GetHealth()
+        {
+            return health;
+        }
+
+        public float GetStrength()
+        {
+            return strength;
+        }
+
+        public override void Update(GameTime gameTime)
         {
 
         }

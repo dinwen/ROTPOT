@@ -12,10 +12,10 @@ namespace Svennebanan
     {
 
         private List<Tile> loadedTiles = new List<Tile>();
-        private ResourceHandler resources;
+        private ResourceManager resources;
         private Vector2 size = Vector2.Zero;
 
-        public LevelLoader(ResourceHandler resources, string path)
+        public LevelLoader(ResourceManager resources, string path)
         {
             this.resources = resources;
             Load(path);
@@ -47,7 +47,8 @@ namespace Svennebanan
                         int id = Convert.ToInt32(ids[x]);
                         if (id != -1)
                         {
-                            loadedTiles.Add(new Tile(new Vector2(x * 32, y * 32), resources.tiles.GetTile(id)));
+                            Console.WriteLine(id);
+                            loadedTiles.Add(new Tile(new Vector2(x * 128, y * 128), resources.tiles.GetTile(id)));
                         }
                     }
                 }

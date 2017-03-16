@@ -11,6 +11,10 @@ namespace Svennebanan
     public class Entity
     {
 
+        public Entity nextEntity;
+        public static Entity firstEntity;
+        public int id;
+
         protected Vector2 position;
         protected Level level;
 
@@ -21,9 +25,14 @@ namespace Svennebanan
             this.level = level;
         }
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
 
+        }
+
+        public Vector2 GetPosition()
+        {
+            return position;
         }
 
         public virtual void Draw(SpriteBatch batch)

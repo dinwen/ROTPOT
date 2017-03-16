@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Rotpot;
+using Rotpot.src.gui;
+using Rotpot.src.level.entities;
+using Rotpot.src.utils;
 using Svennebanan.utils;
 using System.Collections.Generic;
 
@@ -9,54 +12,45 @@ namespace Svennebanan
     public class Level
     {
 
-        public Main main;
-        public ResourceHandler resources;
         private LevelLoader levelLoader;
+        public HUD hud;
 
-        public List<Entity> entities = new List<Entity>();
+        //Managers
+        public ResourceManager resourceManager;
+        public EntityManager entityManager;
+        public CreationManager creationManager;
+        public InputHandler inputHandler;
+
         public List<Tile> tiles = new List<Tile>();
 
-        public Level(Main main, ResourceHandler resources)
+        public Level(ResourceManager resources)
         {
-            this.main = main;
-            this.resources = resources;
-            levelLoader = new LevelLoader(resources, "Content/levels/test.txt");
+            this.resourceManager = resources;
+            levelLoader = new LevelLoader(resources, "Content/levels/Level11.txt");
             tiles = levelLoader.GetLevelTiles();
+
+            
+            entityManager = new EntityManager(this);
+            creationManager = new CreationManager(this);
+
+            entityManager.AddEntity(this, new EntityPlayer(), 0);
+            hud = new HUD(resources, this);
         }
 
-        public void AddEntity(Entity e)
+        public void Update(GameTime gameTime)
         {
-            entities.Add(e);
-            e.Init(this);
-        }
-
-        public void Update()
-        {
-            for(int i = 0; i < entities.Count; i++)
-            {
-                entities[i].Update();
-                if (entities[i].IsRemoved())
-                {
-                    entities.RemoveAt(i);
-                }
-            }
-        }
-
-        public void Reset()
-        {
-            entities.Clear();
+            entityManager.Update(gameTime);
         }
 
         public void Draw(SpriteBatch batch)
         {
-            for (int i = 0; i < entities.Count; i++)
-            {
-                entities[i].Draw(batch);
-            }
+            entityManager.Draw(batch);
+            hud.Draw(batch);
 
             foreach (Tile t in tiles)
             {
-                batch.Draw(resources.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White);
+                
+                batch.Draw(resourceManager.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White);
             }
         }
 

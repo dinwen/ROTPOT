@@ -14,6 +14,8 @@ namespace Svennebanan
         SpriteBatch spriteBatch;
 
         ResourceManager resources;
+        private Camera camera;
+        private InputHandler input;
         Level level;
 
         public Main()
@@ -29,12 +31,16 @@ namespace Svennebanan
         {
             base.Initialize();
             level = new Level(resources);
+
+            camera = new Camera(GraphicsDevice.Viewport);
+            input = new InputHandler();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             resources.LoadContent(Content);
+
         }
 
         protected override void UnloadContent()
@@ -47,6 +53,13 @@ namespace Svennebanan
                 Exit();
 
             level.Update(gameTime);
+            input.Update();
+
+            if (InputHandler.left) camera.Move(-5, 0);
+            if (InputHandler.right) camera.Move(5, 0);
+            if (InputHandler.jump) camera.Move(0, 5);
+            if (InputHandler.attack) camera.Move(0, -5);
+
 
             base.Update(gameTime);
         }
@@ -55,7 +68,7 @@ namespace Svennebanan
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.FrontToBack);
             level.Draw(spriteBatch);
             spriteBatch.End();
 

@@ -12,8 +12,6 @@ namespace Rotpot.src.level.entities
     public class EntityPlayer : EntityLiving
     {
        
-
-
         public EntityPlayer()
         {
             health = 240;
@@ -23,15 +21,10 @@ namespace Rotpot.src.level.entities
         public override void Update(GameTime gameTime)
         {
 
-
-
             if(health == 0)
             {
 
             }
-
-            
-
             
         }
 

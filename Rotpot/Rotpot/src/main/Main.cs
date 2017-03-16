@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Rotpot.src.gui;
 using Rotpot.src.level.entities;
 using Rotpot.src.utils;
 using Svennebanan;
@@ -19,6 +20,8 @@ namespace Svennebanan
         {
             resources = new ResourceManager();
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 1920;
+            graphics.PreferredBackBufferHeight = 1080;
             Content.RootDirectory = "Content";
         }
 
@@ -43,7 +46,7 @@ namespace Svennebanan
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            level.Update();
+            level.Update(gameTime);
 
             base.Update(gameTime);
         }

@@ -83,12 +83,12 @@ namespace Rotpot.src.utils
             }
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             Entity tmpEntity = Entity.firstEntity;
             while (tmpEntity != null)
             {
-                tmpEntity.Update();
+                tmpEntity.Update(gameTime);
                 if (tmpEntity.IsRemoved()) RemoveEntity(tmpEntity);
                 tmpEntity = tmpEntity.nextEntity;
             }

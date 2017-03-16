@@ -43,7 +43,7 @@ namespace Svennebanan
                 viking_left = false;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 viking_jump = true;
             }
@@ -61,7 +61,7 @@ namespace Svennebanan
                 viking_sprint = false;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.F))
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 viking_attack = true;
             }

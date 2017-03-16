@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SpelProjekt.src.utils;
+using Svennebanan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,23 +11,32 @@ namespace Rotpot.src.level.entities
 {
     public class EntityPlayer : EntityLiving
     {
+       
 
-        public Animation moving;
 
-        public EntityPlayer(Vector2 position)
+        public EntityPlayer()
         {
-            moving = new Animation(5, 0, 0, 128, 128, 10, 1, true);
-            this.position = position;
+            health = 240;
+            //strength value 346 max (Size)
         }
 
-        public override void Update()
+        public override void Update(GameTime gameTime)
         {
-            moving.Update();
+
+
+
+            if(health == 0)
+            {
+
+            }
+
+            
+
+            
         }
 
         public override void Draw(SpriteBatch batch)
         {
-            batch.Draw(level.resourceManager.images.GetImage("gris"), position, moving.GetRectangle(), Color.White);
 
         }
 

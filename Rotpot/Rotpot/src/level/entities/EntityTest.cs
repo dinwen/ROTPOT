@@ -21,7 +21,7 @@ namespace Rotpot.src.level.entities
             sprite = level.resourceManager.images.GetImage("grass");
         }
 
-        public override void Update()
+        public override void Update(GameTime gameTime)
         {
             position.X++;
         }

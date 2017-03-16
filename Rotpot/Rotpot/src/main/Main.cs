@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Rotpot.src.gui;
 using Rotpot.src.level.entities;
 using Rotpot.src.utils;
 using Svennebanan;
-using Svennebanan.utils;
 
 namespace Svennebanan
 {
@@ -14,10 +14,7 @@ namespace Svennebanan
         SpriteBatch spriteBatch;
 
         ResourceManager resources;
-        InputHandler input;
         Level level;
-
-        public static Camera camera;
 
         public Main()
         {
@@ -32,10 +29,6 @@ namespace Svennebanan
         {
             base.Initialize();
             level = new Level(resources);
-            camera = new Camera(GraphicsDevice.Viewport);
-
-            camera.Zoom = 0.5f;
-            input = new InputHandler();
         }
 
         protected override void LoadContent()
@@ -53,18 +46,7 @@ namespace Svennebanan
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            input.Update();
-            level.Update();
-
-            if (InputHandler.viking_left) camera.Move(-5, 0);
-            if (InputHandler.viking_right) camera.Move(5, 0);
-            if (InputHandler.viking_jump) camera.Move(0, 5);
-            if (InputHandler.viking_attack) camera.Move(0, -5);
-
-
-
-
-
+            level.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -73,7 +55,7 @@ namespace Svennebanan
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.FrontToBack);
+            spriteBatch.Begin();
             level.Draw(spriteBatch);
             spriteBatch.End();
 

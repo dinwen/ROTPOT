@@ -26,7 +26,7 @@ namespace Svennebanan
         public Level(ResourceManager resources)
         {
             this.resourceManager = resources;
-            levelLoader = new LevelLoader(resources, "Content/levels/test.txt");
+            levelLoader = new LevelLoader(resources, "Content/levels/TestLevelll.txt");
             tiles = levelLoader.GetLevelTiles();
 
             

@@ -38,7 +38,7 @@ namespace Svennebanan
                 left = false;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 jump = true;
             }
@@ -56,7 +56,7 @@ namespace Svennebanan
                 sprint = false;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.F))
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 attack = true;
             }

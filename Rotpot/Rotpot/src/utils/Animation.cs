@@ -23,8 +23,8 @@ namespace SpelProjekt.src.utils
             this.startY = startY * height;
             this.width = width;
             this.height = height;
-            this.maxWidth = mWidth;
-            this.maxHeight = mHeight + this.startY;
+            this.maxWidth = mWidth*width;
+            this.maxHeight = (mHeight*height) + this.startY;
             this.speed = speed;
             this.loop = loop;
             this.current = new Rectangle(this.startX, this.startY, width, height);

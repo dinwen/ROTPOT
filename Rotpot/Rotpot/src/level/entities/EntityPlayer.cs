@@ -20,11 +20,21 @@ namespace Rotpot.src.level.entities
             health = 240;
             movementSpeed = 10;
 
+            position = new Vector2(200, 400);
+
             width = 192;
             height = 192;
             animation = new Animation(5, 0, 0, width, height, 12 * width, height, true);
 
         }
+
+        public void Respawn()
+        {
+            health = 240;
+            strength = 0;
+            position = new Vector2(200, 400);
+        }
+
         public override void Update(GameTime gameTime)
         {
             Main.camera.Position = position - new Vector2(1920 / 4 - width / 2, 1080 / 4 - height / 2);
@@ -42,13 +52,19 @@ namespace Rotpot.src.level.entities
 
             position += velocity;
 
-            //position += velocity;
-
             animation.Update();
 
             if (position.Y > 7000) health-= 3;
 
             CheckCollision();
+            
+
+
+            if (health <= 0)
+            {
+                this.Respawn();
+            }
+
         }
 
         public override void Draw(SpriteBatch batch)

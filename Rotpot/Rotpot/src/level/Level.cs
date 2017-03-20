@@ -14,6 +14,7 @@ namespace Svennebanan
 
         private LevelLoader levelLoader;
         public HUD hud;
+        
 
         //Managers
         public ResourceManager resourceManager;
@@ -35,6 +36,7 @@ namespace Svennebanan
 
             entityManager.AddEntity(this, new EntityPlayer(), 0);
             hud = new HUD(resources, this);
+            
         }
 
         public void Update(GameTime gameTime)
@@ -44,6 +46,9 @@ namespace Svennebanan
 
         public void Draw(SpriteBatch batch)
         {
+
+
+
             entityManager.Draw(batch);
             hud.Draw(batch);
 

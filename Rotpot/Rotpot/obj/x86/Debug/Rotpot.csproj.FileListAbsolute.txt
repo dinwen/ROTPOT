@@ -1,4 +1,3 @@
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\obj\x86\Debug\Rotpot.csprojResolveAssemblyReference.cache
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Rotpot.exe
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Rotpot.pdb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -66,3 +65,11 @@ C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Co
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\player.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level11.txt
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\TILESHEET128X128b.xnb
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\TestLevelll.txt
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\gris.xnb
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\player.xnb
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\TILESHEET128X128.xnb
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level11.txt
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\TILESHEET128X128b.xnb
+C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\Background.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\Background.xnb

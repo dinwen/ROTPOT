@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Rotpot.src.level.entities;
 using Svennebanan;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,16 @@ namespace Rotpot.src.gui
     public class HUD
     {
         public int x, y;
-        private Texture2D ui;
-        private Texture2D healthbar;
-        private Texture2D powerbar;
+        Level level;
 
-        public HUD()
+        ResourceManager resourceManager;
+
+        public HUD(ResourceManager resourceManager, Level level)
         {
-            
+            this.level = level;
+            this.resourceManager = resourceManager;
+            x = -150;
+            y = -100;
         }
 
         public void Update(GameTime gameTime)
@@ -28,7 +32,11 @@ namespace Rotpot.src.gui
 
         public void Draw(SpriteBatch batch)
         {
-            batch.Draw()
+
+            batch.Draw(resourceManager.images.GetImage("powerbar"), new Vector2(164 + x, 279 + y) + Main.camera.Position, new Rectangle(0, 0, (int)((EntityLiving)level.entityManager.GetEntity(0)).GetStrength(), 36), Color.White);
+            batch.Draw(resourceManager.images.GetImage("healthbar"), new Vector2(216 + x, 238 + y) + Main.camera.Position, new Rectangle(0, 0, (int)((EntityLiving)level.entityManager.GetEntity(0)).GetHealth(), 36), Color.White);
+            batch.Draw(resourceManager.images.GetImage("interface"), new Vector2(x, y) + Main.camera.Position, Color.White);
+
         }
     }
 }

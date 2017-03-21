@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Rotpot.src.gui;
 using Rotpot.src.level.entities;
 using Rotpot.src.utils;
 using Svennebanan;
@@ -13,12 +14,16 @@ namespace Svennebanan
         SpriteBatch spriteBatch;
 
         ResourceManager resources;
+        public static Camera camera;
+        private InputHandler input;
         Level level;
 
         public Main()
         {
             resources = new ResourceManager();
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 1920 / 2;
+            graphics.PreferredBackBufferHeight = 1080 / 2;
             Content.RootDirectory = "Content";
         }
 
@@ -26,12 +31,17 @@ namespace Svennebanan
         {
             base.Initialize();
             level = new Level(resources);
+
+            camera = new Camera(GraphicsDevice.Viewport);
+            camera.Zoom = 0.7f;
+            input = new InputHandler();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             resources.LoadContent(Content);
+
         }
 
         protected override void UnloadContent()
@@ -43,7 +53,11 @@ namespace Svennebanan
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            level.Update();
+            level.Update(gameTime);
+            input.Update();
+
+            
+
 
             base.Update(gameTime);
         }
@@ -52,7 +66,7 @@ namespace Svennebanan
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.Immediate);
             level.Draw(spriteBatch);
             spriteBatch.End();
 

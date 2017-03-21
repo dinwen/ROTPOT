@@ -13,7 +13,7 @@ namespace Svennebanan
 
         public void AddTile(Tile tile)
         {
-            int id = (tile.texturePosition.X + (tile.texturePosition.Y * 8)) / 32;
+            int id = (tile.texturePosition.X + (tile.texturePosition.Y * 5)) / 128;
             tiles.Add(id, tile);
         }
 

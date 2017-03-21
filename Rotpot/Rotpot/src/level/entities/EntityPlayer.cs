@@ -13,9 +13,7 @@ namespace Rotpot.src.level.entities
     public class EntityPlayer : EntityLiving
     {
 
-        private Animation runningAnim, jumpingAnim;
-        private bool jumping;
-        private int direction = 0;
+        private Animation animation;
        
         public EntityPlayer()
         {
@@ -26,9 +24,8 @@ namespace Rotpot.src.level.entities
 
             width = 192;
             height = 192;
-            runningAnim = new Animation(5, 0, 0, width, height, 12 * width, height, true);
-            jumpingAnim = new Animation(5, 0, 1, width, height, 9 * width, height * 2, false);
-            width = 150;
+            animation = new Animation(5, 0, 0, width, height, 12 * width, height, true);
+
         }
 
         public void Respawn()
@@ -40,44 +37,22 @@ namespace Rotpot.src.level.entities
 
         public override void Update(GameTime gameTime)
         {
-            Main.camera.Position = position - new Vector2(1920 / 2 - width / 2, 1080 / 2 - height / 2);
+            Main.camera.Position = position - new Vector2(1920 / 4 - width / 2, 1080 / 4 - height / 2);
 
-            if (!OnGround())
-            {
-                velocity.Y += GRAVITY;
-                jumpingAnim.Update();
-
-                if(InputHandler.attack)
-                {
-
-                }
-            }
+            if (!OnGround()) velocity.Y += GRAVITY;
             else
             {
-                jumping = false;
-                jumpingAnim.Reset();
                 if (velocity.Y > 0) velocity.Y = 0f;
-                if (InputHandler.attack)
-                {
-                    velocity.Y = -23;
-                    jumping = true;
-                }
+                if (InputHandler.attack) velocity.Y = -23;
             }
 
-            Vector2 movement = Vector2.Zero;
-            if (InputHandler.left) movement += new Vector2(-movementSpeed, 0);
-            if (InputHandler.right) movement += new Vector2(movementSpeed, 0);
+            if (InputHandler.left) position += new Vector2(-movementSpeed, 0);
+            if (InputHandler.right) position += new Vector2(movementSpeed, 0);
 
-            if (movement != Vector2.Zero)
-            {
-                if (movement.X > 0) direction = 1;
-                else direction = -1;
-                if(velocity.Y == 0) runningAnim.Update();
-            }
-            else runningAnim.Reset();
-            position += movement;
 
             position += velocity;
+
+            animation.Update();
 
             if (position.Y > 7000) health-= 3;
 
@@ -94,16 +69,7 @@ namespace Rotpot.src.level.entities
 
         public override void Draw(SpriteBatch batch)
         {
-            if (direction == 1)
-            {
-                if(!jumping)  batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White);
-                else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White);
-            }
-            else
-            {
-                if(!jumping) batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0);
-                else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0);
-            }
+            batch.Draw(level.resourceManager.images.GetImage("player"), position, animation.GetRectangle(), Color.White);
         }
 
     }

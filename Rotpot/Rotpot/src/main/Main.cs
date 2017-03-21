@@ -22,19 +22,19 @@ namespace Svennebanan
         {
             resources = new ResourceManager();
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 1920;
-            graphics.PreferredBackBufferHeight = 1080;
+            graphics.PreferredBackBufferWidth = 1920 / 2;
+            graphics.PreferredBackBufferHeight = 1080 / 2;
             Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
         {
             base.Initialize();
+            level = new Level(resources);
 
             camera = new Camera(GraphicsDevice.Viewport);
-            camera.Zoom = 1f;
+            camera.Zoom = 0.7f;
             input = new InputHandler();
-            level = new Level(resources);
         }
 
         protected override void LoadContent()

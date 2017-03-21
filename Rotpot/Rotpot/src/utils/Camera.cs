@@ -11,7 +11,6 @@ namespace Svennebanan
     public class Camera
     {
         private readonly Viewport _viewport;
-        private float width, height;
 
         public Camera(Viewport viewport)
         {
@@ -28,18 +27,10 @@ namespace Svennebanan
         public float Zoom { get; set; }
         public Vector2 Origin { get; set; }
 
-        public void SetLevelSize(float width, float height)
+        public void Move(int dx, int dy)
         {
-            this.width = width;
-            this.height = height;
-        }
-
-        public void Update()
-        {
-            if (Position.X < 0) Position.X = 0;
-            if (Position.Y < 0) Position.Y = 0;
-            if (Position.X > width - 1920) Position.X = width - 1920;
-            if (Position.Y > height - 1080) Position.Y = height - 1080;
+            Position.X += dx;
+            Position.Y += dy;
         }
 
         public Matrix GetViewMatrix()

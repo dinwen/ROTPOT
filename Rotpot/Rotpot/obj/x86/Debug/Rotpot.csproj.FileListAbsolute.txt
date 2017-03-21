@@ -73,4 +73,3 @@ C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Co
 C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level11.txt
 C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\TILESHEET128X128b.xnb
 C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\Background.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\Background.xnb

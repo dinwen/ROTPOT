@@ -104,6 +104,11 @@ namespace Rotpot.src.level.entities
             return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height, width - (int)movementSpeed * 2, (int)movementSpeed * 2);
         }
 
+        public Rectangle GetBoundsW()
+        {
+            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height, width - (int)movementSpeed * 2, (int)movementSpeed * 2);
+        }
+
         public Rectangle GetBoundsBottom()
         {
             return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height - (int)movementSpeed, width - (int)movementSpeed * 2, (int)movementSpeed);

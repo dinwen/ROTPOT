@@ -36,7 +36,7 @@ namespace Svennebanan
             entityManager = new EntityManager(this);
             creationManager = new CreationManager(this);
 
-            entityManager.AddEntity(this, new EntityPlayer(), 0);
+            entityManager.AddEntity(this, new EntityPlayer());
             hud = new HUD(resources, this);
 
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);

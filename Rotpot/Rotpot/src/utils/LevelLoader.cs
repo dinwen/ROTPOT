@@ -13,7 +13,7 @@ namespace Svennebanan
 
         private List<Tile> loadedTiles = new List<Tile>();
         private ResourceManager resources;
-        private Vector2 size = Vector2.Zero;
+        public Vector2 size = Vector2.Zero;
 
         public LevelLoader(ResourceManager resources, string path)
         {
@@ -38,6 +38,10 @@ namespace Svennebanan
                 }
 
                 string[] lines = fullText.Split('\n');
+
+
+                size.Y = lines.Length-1;
+                size.X = lines[0].Split(',').Length;
 
                 for (int y = 0; y < lines.Length - 1; y++)
                 {

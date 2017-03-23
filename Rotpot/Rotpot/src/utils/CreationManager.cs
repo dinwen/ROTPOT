@@ -19,7 +19,7 @@ namespace Rotpot.src.utils
 
         public void CreateEntity(Entity e, int id)
         {
-            level.entityManager.AddEntity(level, e, id);
+            level.entityManager.AddEntity(level, e);
         }
 
         public void Update()

@@ -31,6 +31,7 @@ namespace Svennebanan
             images.AddImage("gris", content.Load<Texture2D>("gris"));
             images.AddImage("player", content.Load<Texture2D>("player"));
             images.AddImage("background", content.Load<Texture2D>("Background"));
+            images.AddImage("trees", content.Load<Texture2D>("Trees"));
             images.AddImage("star", content.Load<Texture2D>("star"));
 
             tiles.AddTile(new Tile(0, 0, new Rectangle(64, 0, 64, 64), true));

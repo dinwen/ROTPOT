@@ -73,3 +73,10 @@ C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Co
 C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\TILESHEET128X128b.xnb
 C:\Users\daniel.hansson6\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\Background.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\Background.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\obj\x86\Debug\Rotpot.csprojResolveAssemblyReference.cache
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\Trees.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Leevveel.txt
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\BigLevel.txt
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\circle.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\diamond.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\star.xnb

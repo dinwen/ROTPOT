@@ -11,7 +11,7 @@ namespace Rotpot.src.utils
 {
     public class EntityManager
     {
-
+        private int id;
         private Level level;
 
         public EntityManager(Level level)
@@ -19,10 +19,10 @@ namespace Rotpot.src.utils
             this.level = level;
         }
 
-        public void AddEntity(Level level, Entity entity, int id)
+        public void AddEntity(Level level, Entity entity)
         {
             entity.Init(level);
-            entity.id = id;
+            entity.id = id++;
             if (Entity.firstEntity == null)
             {
                 Entity.firstEntity = entity;

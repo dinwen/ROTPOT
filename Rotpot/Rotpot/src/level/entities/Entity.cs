@@ -29,6 +29,12 @@ namespace Svennebanan
         {
 
         }
+        public float GetDistance(Vector2 secondPosition)
+        {
+           float distance = Vector2.Distance(position, secondPosition);
+           return distance;    
+        }
+
 
         public Vector2 GetPosition()
         {

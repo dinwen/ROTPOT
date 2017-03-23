@@ -35,6 +35,7 @@ namespace Svennebanan
 
             entityManager.AddEntity(this, new EntityPlayer(), 0);
             hud = new HUD(resources, this);
+            entityManager.AddEntity(this, new EntityPig(new Vector2(-100, -125)), 1);
         }
 
         public void Update(GameTime gameTime)
@@ -42,6 +43,11 @@ namespace Svennebanan
             entityManager.Update(gameTime);
         }
 
+      
+        public EntityPlayer GetPlayer()
+        {
+            return (EntityPlayer)entityManager.GetEntity(0);
+        }
         public void Draw(SpriteBatch batch)
         {
             entityManager.Draw(batch);

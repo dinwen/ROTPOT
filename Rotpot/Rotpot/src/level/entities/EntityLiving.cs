@@ -93,6 +93,7 @@ namespace Rotpot.src.level.entities
                 {
                     position.X = t.position.X - width + t.offset.X;
                 }
+                
             }
         }
 

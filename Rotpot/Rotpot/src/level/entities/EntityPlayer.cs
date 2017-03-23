@@ -42,6 +42,8 @@ namespace Rotpot.src.level.entities
         {
             Main.camera.Position = position - new Vector2(1920 / 2 - width / 2, 1080 / 2 - height / 2);
 
+            level.entityManager.AddEntity(level, new ParticleDust(position));
+
             if (!OnGround())
             {
                 velocity.Y += GRAVITY;

@@ -4,15 +4,18 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/tiles.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/grass.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/healthbar.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/powerbar.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/interface.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/TILESHEET128X128.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/gris.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/player.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/TILESHEET128X128b.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/Background.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/tiles.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/grass.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/healthbar.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/powerbar.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/interface.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/TILESHEET128X128.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/gris.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/player.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/TILESHEET128X128b.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/Background.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/circle.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/diamond.png</File>
+    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/star.png</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -42,9 +42,10 @@
     <Compile Include="src\gui\HUD.cs" />
     <Compile Include="src\level\entities\Entity.cs" />
     <Compile Include="src\level\entities\EntityLiving.cs" />
+    <Compile Include="src\level\entities\EntityParticle.cs" />
     <Compile Include="src\level\entities\EntityPlayer.cs" />
     <Compile Include="src\level\entities\EntityTest.cs" />
-    <Compile Include="src\level\entities\Particle.cs" />
+    <Compile Include="src\level\entities\ParticleDust.cs" />
     <Compile Include="src\level\Level.cs" />
     <Compile Include="src\level\Tile.cs" />
     <Compile Include="src\main\Main.cs" />
@@ -58,7 +59,6 @@
     <Compile Include="src\utils\ImageHandler.cs" />
     <Compile Include="src\utils\InputHandler.cs" />
     <Compile Include="src\utils\LevelLoader.cs" />
-    <Compile Include="src\utils\ParticleHandler.cs" />
     <Compile Include="src\utils\ResourceManager.cs" />
     <Compile Include="src\utils\TileHandler.cs" />
   </ItemGroup>

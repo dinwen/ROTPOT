@@ -35,6 +35,7 @@ namespace Rotpot.src.level.entities
         {
             health = 240;
             strength = 0;
+            velocity = new Vector2(0, 0);
             position = new Vector2(200, 400);
         }
 
@@ -42,7 +43,7 @@ namespace Rotpot.src.level.entities
         {
             Main.camera.Position = position - new Vector2(1920 / 2 - width / 2, 1080 / 2 - height / 2);
 
-            level.entityManager.AddEntity(level, new ParticleDust(position));
+            //level.entityManager.AddEntity(level, new ParticleDust(position));
 
             if (!OnGround())
             {
@@ -61,7 +62,7 @@ namespace Rotpot.src.level.entities
                 if (velocity.Y > 0) velocity.Y = 0f;
                 if (InputHandler.attack)
                 {
-                    velocity.Y = -23;
+                    velocity.Y = -23; //23
                     jumping = true;
                 }
             }
@@ -92,6 +93,7 @@ namespace Rotpot.src.level.entities
                 this.Respawn();
             }
 
+            movementSpeed = 10;
         }
 
         public override void Draw(SpriteBatch batch)

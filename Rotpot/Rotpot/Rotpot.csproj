@@ -43,6 +43,7 @@
     <Compile Include="src\level\entities\Entity.cs" />
     <Compile Include="src\level\entities\EntityLiving.cs" />
     <Compile Include="src\level\entities\EntityParticle.cs" />
+    <Compile Include="src\level\entities\EntityPig.cs" />
     <Compile Include="src\level\entities\EntityPlayer.cs" />
     <Compile Include="src\level\entities\EntityTest.cs" />
     <Compile Include="src\level\entities\EntityBox.cs" />

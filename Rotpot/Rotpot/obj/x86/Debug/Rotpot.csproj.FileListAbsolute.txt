@@ -80,3 +80,4 @@ C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Co
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\circle.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\diamond.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\star.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\block.xnb

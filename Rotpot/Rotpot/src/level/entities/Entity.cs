@@ -35,6 +35,11 @@ namespace Svennebanan
             return position;
         }
 
+        public void SetPosition(Vector2 position)
+        {
+            this.position = position;
+        }
+
         public virtual void Draw(SpriteBatch batch)
         {
 

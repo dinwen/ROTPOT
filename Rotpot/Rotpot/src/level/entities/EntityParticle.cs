@@ -17,9 +17,9 @@ namespace Rotpot.src.level.entities
         protected float size;
         protected int duration;
 
+
         public EntityParticle()
         {
-
         }
         public override void Update(GameTime gameTime)
         {

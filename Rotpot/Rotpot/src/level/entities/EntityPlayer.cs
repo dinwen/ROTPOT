@@ -42,7 +42,7 @@ namespace Rotpot.src.level.entities
         {
             Main.camera.Position = position - new Vector2(1920 / 2 - width / 2, 1080 / 2 - height / 2);
 
-            level.entityManager.AddEntity(level, new ParticleDust(position));
+            level.entityManager.AddEntity(level, new ParticleStar(new Vector2(position.X+width/2, position.Y+rdn.Next(height+1))));
 
             if (!OnGround())
             {

@@ -93,7 +93,7 @@ namespace Rotpot.src.level.entities
                 }
                 if (GetBoundsBottom().Intersects(t.GetBounds()))
                 {
-                    Console.WriteLine("Tiles");
+                    //Console.WriteLine("Tiles");
                     position.Y = t.position.Y - height + t.offset.Y;
                 }
                 if (GetBoundsLeft().Intersects(t.GetBounds()))

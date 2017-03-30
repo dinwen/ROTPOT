@@ -14,7 +14,7 @@ namespace Rotpot.src.level.entities
         {
             position = Position;
 
-            duration = rdn.Next(10, 50);
+            duration = rdn.Next(60, 80);
 
             velocity = new Vector2(rdn.Next(-2,2),rdn.Next(-5,1));
         }

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Rotpot.src.level.entities
 {
-    class ParticleBackground:EntityParticle
+    class ParticleBackgroundBig : EntityParticle
     {
-        public ParticleBackground(Vector2 Position)
+        public ParticleBackgroundBig(Vector2 Position)
         {
             position = Position;
 
-            duration = rdn.Next(5, 60);
+            duration = rdn.Next(15, 20);
         }
         public override void Update(GameTime gameTime)
         {
@@ -25,7 +25,7 @@ namespace Rotpot.src.level.entities
         }
         public override void Draw(SpriteBatch batch)
         {
-            batch.Draw(level.resourceManager.images.GetImage("circle3"), position, Color.White);
+            batch.Draw(level.resourceManager.images.GetImage("circlebig"), position, Color.White);
         }
     }
 }

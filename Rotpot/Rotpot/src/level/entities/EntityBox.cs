@@ -15,8 +15,8 @@ namespace Rotpot.src.level.entities
         public EntityBox(Vector2 position)
         {
             this.position = position;
-            this.width = 380;
-            this.height = 384;
+            this.width = 434;
+            this.height = 372;
             this.movementSpeed = 5;
         }
 
@@ -36,7 +36,6 @@ namespace Rotpot.src.level.entities
             if (GetBoundsLeft().Intersects(player.GetBoundsFull()))
             {
                 position.X = player.GetPosition().X + player.width;
-                player.SetPosition(new Vector2(position.X - player.width, player.GetPosition().Y));
                 player.movementSpeed = 1f;
             }
             if (GetBoundsRight().Intersects(player.GetBoundsFull()))

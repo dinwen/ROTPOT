@@ -17,8 +17,6 @@ namespace Rotpot.src.level.entities
         private Animation animation;
         public Rectangle agroRange;
 
-        int direction = 0;
-
         public EntityPig(Vector2 position)
         {
             movementSpeed = 5;
@@ -36,10 +34,7 @@ namespace Rotpot.src.level.entities
 
         public override void Draw(SpriteBatch batch)
         {
-            if (direction == 0)
-                batch.Draw(level.resourceManager.images.GetImage("gris"), position, animation.GetRectangle(), Color.White);
-            if (direction == 1)
-                batch.Draw(level.resourceManager.images.GetImage("gris"), position, animation.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0);
+            batch.Draw(level.resourceManager.images.GetImage("gris"), position, animation.GetRectangle(), Color.White);
         }
 
         public override void Update(GameTime gameTime)
@@ -53,10 +48,14 @@ namespace Rotpot.src.level.entities
                 velocity = new Vector2(0, 0);
             }
 
-            if (GetDistance(level.GetPlayer().GetPosition()) < 500)
+            if (GetDistance(level.GetPlayer().GetPosition()) < 50000)
             {
                 pigAlert();
                 animation.Update();
+            }
+            else
+            {
+                position += new Vector2(-patrolSpeed, 0);
             }
 
             if (GetDistance(level.GetPlayer().GetPosition()) < 120)
@@ -73,13 +72,11 @@ namespace Rotpot.src.level.entities
             if (level.GetPlayer().GetPosition().X < position.X)
             {
                 position += new Vector2(-movementSpeed, 0);
-                direction = 1;
             }
 
             if (level.GetPlayer().GetPosition().X > position.X)
             {
                 position += new Vector2(movementSpeed, 0);
-                direction = 0;
             }
         }
     }

@@ -22,7 +22,7 @@ namespace Rotpot.src.level.entities
             health = 240;
             movementSpeed = 10;
 
-            position = new Vector2(9000, 400);
+            position = new Vector2(200, 400);
 
             width = 192;
             height = 192;

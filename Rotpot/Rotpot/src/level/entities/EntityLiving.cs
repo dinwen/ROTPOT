@@ -11,11 +11,12 @@ namespace Rotpot.src.level.entities
 {
     public class EntityLiving : Entity
     {
-        protected int width, height;
+        public int width, height;
         protected float health;
         protected float strength;
-        protected float movementSpeed;
+        public float movementSpeed;
 
+        public bool onSolidEntity = false;
 
         protected Vector2 velocity;
         protected const float GRAVITY = 0.82f;
@@ -57,8 +58,18 @@ namespace Rotpot.src.level.entities
 
         }
 
+        public void SetVelocity(Vector2 vel)
+        {
+            this.velocity = vel;
+        } 
+
         public bool OnGround()
         {
+            if (onSolidEntity)
+            {
+                onSolidEntity = false;
+                return true;
+            }
             foreach (Tile t in level.tiles)
             {
                 if (t.GetBounds().Intersects(GetBoundsInGround()))

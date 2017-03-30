@@ -37,6 +37,17 @@ namespace Svennebanan
             return position;
         }
 
+        public void SetPosition(Vector2 position)
+        {
+            this.position = position;
+        }
+
+        public float GetDistance(Vector2 secondPosition)
+        {
+            float distance = Vector2.Distance(position, secondPosition);
+            return distance;
+        }
+
         public virtual void Draw(SpriteBatch batch)
         {
 

@@ -20,8 +20,6 @@ namespace Svennebanan
 
         private bool remove = false;
 
-        protected static Random rdn = new Random();
-
         public void Init(Level level)
         {
             this.level = level;

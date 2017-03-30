@@ -37,7 +37,7 @@ namespace Svennebanan
             creationManager = new CreationManager(this);
 
             entityManager.AddEntity(this, new EntityPlayer());
-            entityManager.AddEntity(this, new EntityBox(new Vector2(10000, 100)));
+            entityManager.AddEntity(this, new EntityBox(new Vector2(489 * 128, 12 * 128)));
             entityManager.AddEntity(this, new EntityPig(new Vector2(9600, 100)));
             hud = new HUD(resources, this);
 

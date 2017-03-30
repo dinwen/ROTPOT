@@ -29,7 +29,7 @@ namespace Svennebanan
         public Level(ResourceManager resources)
         {
             this.resourceManager = resources;
-            levelLoader = new LevelLoader(resources, "Content/levels/BigLevel.txt");
+            levelLoader = new LevelLoader(resources, "Content/levels/Level2.txt");
             tiles = levelLoader.GetLevelTiles();
 
             
@@ -37,8 +37,8 @@ namespace Svennebanan
             creationManager = new CreationManager(this);
 
             entityManager.AddEntity(this, new EntityPlayer());
-            entityManager.AddEntity(this, new EntityBox(new Vector2(450, 100)));
-            entityManager.AddEntity(this, new EntityPig(new Vector2(200, 100)));
+            entityManager.AddEntity(this, new EntityBox(new Vector2(489 * 128, 12 * 128)));
+            entityManager.AddEntity(this, new EntityPig(new Vector2(9600, 100)));
             hud = new HUD(resources, this);
 
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);

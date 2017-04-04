@@ -37,7 +37,7 @@ namespace Svennebanan
             creationManager = new CreationManager(this);
 
             entityManager.AddEntity(this, new EntityPlayer());
-            entityManager.AddEntity(this, new EntityBox(new Vector2(489 * 128, 12 * 128)));
+            entityManager.AddEntity(this, new EntityBox(new Vector2(469 * 128, 14 * 128)));
             entityManager.AddEntity(this, new EntityPig(new Vector2(9600, 100)));
             hud = new HUD(resources, this);
 
@@ -62,17 +62,17 @@ namespace Svennebanan
 
         public void Draw(SpriteBatch batch)
         {
-            batch.Draw(resourceManager.images.GetImage("background"), bg1, Color.White);
-            batch.Draw(resourceManager.images.GetImage("background"), bg2, Color.White);
-            batch.Draw(resourceManager.images.GetImage("trees"), bg3, Color.White);
-            batch.Draw(resourceManager.images.GetImage("trees"), bg4, Color.White);
+            batch.Draw(resourceManager.images.GetImage("background"), bg1, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
+            batch.Draw(resourceManager.images.GetImage("background"), bg2, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
+            batch.Draw(resourceManager.images.GetImage("trees"), bg3, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
+            batch.Draw(resourceManager.images.GetImage("trees"), bg4, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
 
 
             entityManager.Draw(batch);
 
             foreach (Tile t in tiles)
             {
-                batch.Draw(resourceManager.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White);
+                batch.Draw(resourceManager.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.1f);
             }
 
             hud.Draw(batch);

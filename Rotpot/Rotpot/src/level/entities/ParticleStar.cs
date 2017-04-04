@@ -16,7 +16,7 @@ namespace Rotpot.src.level.entities
 
             duration = rdn.Next(60, 80);
 
-            velocity = new Vector2(rdn.Next(-2,2),rdn.Next(-5,1));
+            velocity = new Vector2((float)(rdn.NextDouble() - 0.5f) * 4, (float)(rdn.NextDouble() - 0.8f) * 4);
         }
         public override void Update(GameTime gameTime)
         {
@@ -28,7 +28,9 @@ namespace Rotpot.src.level.entities
         }
         public override void Draw(SpriteBatch batch)
         {
-            batch.Draw(level.resourceManager.images.GetImage("star"), position, Color.White);
+            //batch.Draw(level.resourceManager.images.GetImage("star"), position, new Color(Color.White, duration / 60f));
+
+            batch.Draw(level.resourceManager.images.GetImage("star"), position, null, new Color(Color.White, duration / 60f), 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.05f);
         }
     }
 }

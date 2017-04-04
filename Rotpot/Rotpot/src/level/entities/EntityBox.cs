@@ -56,7 +56,7 @@ namespace Rotpot.src.level.entities
 
         public override void Draw(SpriteBatch batch)
         {
-            batch.Draw(level.resourceManager.images.GetImage("box"), position, Color.White);
+            batch.Draw(level.resourceManager.images.GetImage("box"), position, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.4f);
         }
 
     }

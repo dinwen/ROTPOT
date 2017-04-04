@@ -45,7 +45,7 @@ namespace Rotpot.src.level.entities
 
 
             level.entityManager.AddEntity(level, new ParticleStar(new Vector2(position.X + width / 2, position.Y + rdn.Next(height + 10))));
-            level.entityManager.AddEntity(level, new ParticleBackground(new Vector2(position.X + rdn.Next(width - 1000, width + 1000), position.Y + rdn.Next(height - 1000, height + 1000))));
+           // level.entityManager.AddEntity(level, new ParticleBackground(new Vector2(position.X + rdn.Next(width - 1000, width + 1000), position.Y + rdn.Next(height - 1000, height + 1000))));
             level.entityManager.AddEntity(level, new ParticleBackgroundBig(new Vector2(position.X + rdn.Next(width - 1000, width + 1000), position.Y + rdn.Next(height - 1000, height + 1000))));
             //level.entityManager.AddEntity(level, new ParticleDust(position));
 
@@ -104,13 +104,13 @@ namespace Rotpot.src.level.entities
         {
             if (direction == 1)
             {
-                if(!jumping)  batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White);
-                else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White);
+                if(!jumping)  batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+                else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
             }
             else
             {
-                if(!jumping) batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0);
-                else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0);
+                if(!jumping) batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
+                else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
             }
         }
 

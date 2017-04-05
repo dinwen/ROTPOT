@@ -43,6 +43,19 @@ namespace Svennebanan
             entityManager.AddEntity(this, new EntityPlayer(new Vector2(100, 100)));
             entityManager.AddEntity(this, new EntityBox(new Vector2(469 * 128, 14 * 128)));
             entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
             hud = new HUD(resources, this);
 
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);

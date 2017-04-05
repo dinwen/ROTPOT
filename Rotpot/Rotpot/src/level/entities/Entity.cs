@@ -22,6 +22,7 @@ namespace Svennebanan
 
         protected static Random rdn = new Random();
 
+
         public void Init(Level level)
         {
             this.level = level;
@@ -35,6 +36,17 @@ namespace Svennebanan
         public Vector2 GetPosition()
         {
             return position;
+        }
+
+        public void SetPosition(Vector2 position)
+        {
+            this.position = position;
+        }
+
+        public float GetDistance(Vector2 secondPosition)
+        {
+            float distance = Vector2.Distance(position, secondPosition);
+            return distance;
         }
 
         public virtual void Draw(SpriteBatch batch)

@@ -23,7 +23,7 @@ namespace Svennebanan
 
         public void LoadContent(ContentManager content)
         {
-            images.AddImage("tile_sheet", content.Load<Texture2D>("TILESHEET128X128b"));
+            images.AddImage("tile_sheet", content.Load<Texture2D>("TILESHEET128X128"));
             images.AddImage("grass", content.Load<Texture2D>("grass"));
             images.AddImage("interface", content.Load<Texture2D>("interface"));
             images.AddImage("powerbar", content.Load<Texture2D>("powerbar"));
@@ -32,6 +32,7 @@ namespace Svennebanan
             images.AddImage("player", content.Load<Texture2D>("player"));
             images.AddImage("background", content.Load<Texture2D>("Background"));
             images.AddImage("trees", content.Load<Texture2D>("Trees"));
+            images.AddImage("box", content.Load<Texture2D>("block"));
 
             //particles
             images.AddImage("star", content.Load<Texture2D>("star"));
@@ -43,18 +44,18 @@ namespace Svennebanan
             images.AddImage("circlebig", content.Load<Texture2D>("circlebig"));
             images.AddImage("circlebig1", content.Load<Texture2D>("circlebig1"));
 
-
-
             tiles.AddTile(new Tile(0, 0, new Rectangle(64, 0, 64, 64), true));
             tiles.AddTile(new Tile(1, 0, new Rectangle(0, 0, 128, 64), true));
             tiles.AddTile(new Tile(2, 0, new Rectangle(0, 0, 64, 64), true));
-            tiles.AddTile(new Tile(3, 0, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(4, 0, new Rectangle(0, 0, 128, 128), true));
-            tiles.AddTile(new Tile(0, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(5, 0, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(1, 1, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(2, 1, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(3, 1, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(4, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(5, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(4, 2, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(5, 2, new Rectangle(0, 0, 128, 128), true));
         }
 
     }

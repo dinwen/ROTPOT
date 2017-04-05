@@ -14,9 +14,12 @@ namespace Svennebanan
         public static bool jump;
         public static bool sprint;
         public static bool attack;
+
+        public static bool releaseJump = false;
         
 
         public static bool escape;
+        public static bool shift;
 
         public void Update()
         {
@@ -58,11 +61,21 @@ namespace Svennebanan
 
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
-                attack = true;
+                if(!releaseJump) attack = true;
             }
             else
             {
+                releaseJump = false;
                 attack = false;
+            }
+
+            if(Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+            {
+                shift = true;
+            }
+            else
+            {
+                shift = false;
             }
         }
 

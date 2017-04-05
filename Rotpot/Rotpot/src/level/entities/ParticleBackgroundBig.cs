@@ -15,7 +15,7 @@ namespace Rotpot.src.level.entities
             position = Position;
 
             duration = rdn.Next(20, 100);
-            velocity = new Vector2(rdn.Next(4) - 2, -(rdn.Next(3) + 1));
+            velocity = new Vector2(rdn.Next(5) - 2, -(rdn.Next(3) + 1));
         }
         public override void Update(GameTime gameTime)
         {

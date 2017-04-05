@@ -23,20 +23,19 @@ namespace Svennebanan
 
         public List<Tile> tiles = new List<Tile>();
 
-        private Vector2 bg1, bg2;
-        private Vector2 bg3, bg4;
+        private Vector2 background1, background2;
+        private Vector2 background3, background4;
 
         public Level(ResourceManager resources)
         {
             this.resourceManager = resources;
             levelLoader = new LevelLoader(resources, "Content/levels/Level2.txt");
             tiles = levelLoader.GetLevelTiles();
-
             
             entityManager = new EntityManager(this);
             creationManager = new CreationManager(this);
 
-            entityManager.AddEntity(this, new EntityPlayer());
+            entityManager.AddEntity(this, new EntityPlayer(new Vector2(100, 100)));
             entityManager.AddEntity(this, new EntityBox(new Vector2(469 * 128, 14 * 128)));
             entityManager.AddEntity(this, new EntityPig(new Vector2(9600, 100)));
             hud = new HUD(resources, this);
@@ -49,10 +48,10 @@ namespace Svennebanan
             entityManager.Update(gameTime);
 
             Main.camera.Update();
-            bg1 = new Vector2((int)((Main.camera.Position.X) / 1920) * 1920, Main.camera.Position.Y);
-            bg2 = new Vector2((int)((Main.camera.Position.X) / 1920 + 1) * 1920, Main.camera.Position.Y);
-            bg3 = new Vector2((int)((Main.camera.Position.X*1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5), Main.camera.Position.Y);
-            bg4 = new Vector2((int)((Main.camera.Position.X * 1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5) + 1920, Main.camera.Position.Y);
+            background1 = new Vector2((int)((Main.camera.Position.X) / 1920) * 1920, Main.camera.Position.Y);
+            background2 = new Vector2((int)((Main.camera.Position.X) / 1920 + 1) * 1920, Main.camera.Position.Y);
+            background3 = new Vector2((int)((Main.camera.Position.X*1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5), Main.camera.Position.Y);
+            background4 = new Vector2((int)((Main.camera.Position.X * 1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5) + 1920, Main.camera.Position.Y);
         }
 
         public EntityPlayer GetPlayer()
@@ -62,10 +61,10 @@ namespace Svennebanan
 
         public void Draw(SpriteBatch batch)
         {
-            batch.Draw(resourceManager.images.GetImage("background"), bg1, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
-            batch.Draw(resourceManager.images.GetImage("background"), bg2, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
-            batch.Draw(resourceManager.images.GetImage("trees"), bg3, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
-            batch.Draw(resourceManager.images.GetImage("trees"), bg4, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
+            batch.Draw(resourceManager.images.GetImage("background"), background1, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
+            batch.Draw(resourceManager.images.GetImage("background"), background2, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
+            batch.Draw(resourceManager.images.GetImage("trees"), background3, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
+            batch.Draw(resourceManager.images.GetImage("trees"), background4, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
 
 
             entityManager.Draw(batch);

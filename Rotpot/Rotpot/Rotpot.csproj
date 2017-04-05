@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="src\gui\Button.cs" />
     <Compile Include="src\gui\HUD.cs" />
+    <Compile Include="src\gui\MainMenu.cs" />
     <Compile Include="src\level\entities\Entity.cs" />
     <Compile Include="src\level\entities\EntityLiving.cs" />
     <Compile Include="src\level\entities\EntityParticle.cs" />

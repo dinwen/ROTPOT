@@ -4,31 +4,31 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/tiles.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/grass.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/healthbar.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/powerbar.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/interface.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/TILESHEET128X128.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/gris.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/player.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/Background.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/Trees.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/diamond.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/star.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/circle.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/block.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/circle1.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/circlebig1.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/circle2.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/circle3.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/circlebig.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/smoke.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/menu/HELP.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/menu/menu background.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/menu/OPTIONS.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/menu/PLAY.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/menu/QUIT.png</File>
-    <File>C:/Users/trungkin.le/Documents/GitHub/ROTPOT/Rotpot/Rotpot/Content/stick.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/tiles.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/grass.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/healthbar.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/powerbar.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/interface.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/TILESHEET128X128.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/gris.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/player.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/Background.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/Trees.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/diamond.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/star.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circle.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/block.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circle1.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circlebig1.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circle2.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circle3.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circlebig.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/smoke.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/HELP.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/menu background.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/OPTIONS.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/PLAY.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/QUIT.png</File>
+    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/stick.png</File>
   </SourceFiles>
 </SourceFileCollection>

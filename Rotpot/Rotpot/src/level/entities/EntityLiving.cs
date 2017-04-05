@@ -74,8 +74,8 @@ namespace Rotpot.src.level.entities
             {
                 if (t.GetBounds().Intersects(GetBoundsInGround()))
                 {
-                    position.Y = t.position.Y - height;
-                    velocity.Y = 0;
+                    //position.Y = t.position.Y - height;
+                    if(velocity.Y > 0) velocity.Y = 0;
                     return true;
                 }
             }

@@ -151,3 +151,4 @@ C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug
 C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\obj\x86\Debug\Rotpot.csprojResolveAssemblyReference.cache
 C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\stick.xnb
+C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\stick.xnb

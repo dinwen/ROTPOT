@@ -22,7 +22,7 @@ namespace Rotpot.src.gui
             this.level = level;
             this.resourceManager = resourceManager;
             x = 0;
-            y = 0;
+            y = 30;
         }
 
         public void Update(GameTime gameTime)
@@ -32,8 +32,8 @@ namespace Rotpot.src.gui
 
         public void Draw(SpriteBatch batch)
         {
-            batch.Draw(resourceManager.images.GetImage("powerbar"), new Vector2(164 + x, 279 + y) + Main.camera.Position, new Rectangle(0, 0, (int)((EntityLiving)level.entityManager.GetEntity(0)).GetStrength(), 36), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.9f);
-            batch.Draw(resourceManager.images.GetImage("healthbar"), new Vector2(216 + x, 238 + y) + Main.camera.Position, new Rectangle(0, 0, (int)((EntityLiving)level.entityManager.GetEntity(0)).GetHealth(), 36), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.9f);
+            batch.Draw(resourceManager.images.GetImage("powerbar"), new Vector2(164 + x, 151 + y) + Main.camera.Position, new Rectangle(0, 0, (int)((EntityLiving)level.entityManager.GetEntity(0)).GetStrength(), 36), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.9f);
+            batch.Draw(resourceManager.images.GetImage("healthbar"), new Vector2(216 + x, 110 + y) + Main.camera.Position, new Rectangle(0, 0, (int)((EntityLiving)level.entityManager.GetEntity(0)).GetHealth(), 36), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.9f);
             batch.Draw(resourceManager.images.GetImage("interface"), new Vector2(x, y) + Main.camera.Position, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 1f);
         }
     }

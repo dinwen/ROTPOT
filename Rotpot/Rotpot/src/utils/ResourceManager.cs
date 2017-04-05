@@ -34,6 +34,11 @@ namespace Svennebanan
             images.AddImage("trees", content.Load<Texture2D>("Trees"));
             images.AddImage("box", content.Load<Texture2D>("block"));
 
+            //Menu
+            //images.AddImage("play", content.Load<Texture2D>("PLAY"));
+            //images.AddImage("quit", content.Load<Texture2D>("QUIT"));
+            //images.AddImage("help", content.Load<Texture2D>("HELP"));
+
             //particles
             images.AddImage("star", content.Load<Texture2D>("star"));
             images.AddImage("diamond", content.Load<Texture2D>("diamond"));
@@ -43,6 +48,7 @@ namespace Svennebanan
             images.AddImage("circle3", content.Load<Texture2D>("circle3"));
             images.AddImage("circlebig", content.Load<Texture2D>("circlebig"));
             images.AddImage("circlebig1", content.Load<Texture2D>("circlebig1"));
+            images.AddImage("smoke", content.Load<Texture2D>("smoke"));
 
             tiles.AddTile(new Tile(0, 0, new Rectangle(64, 0, 64, 64), true));
             tiles.AddTile(new Tile(1, 0, new Rectangle(0, 0, 128, 64), true));

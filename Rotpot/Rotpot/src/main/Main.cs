@@ -17,6 +17,14 @@ namespace Svennebanan
         public static Camera camera;
         private InputHandler input;
         Level level;
+        MainMenu menu;
+
+        public enum STATE
+        {
+            Game, Menu
+        };
+
+        public static STATE state = STATE.Game;
 
         public Main()
         {
@@ -35,6 +43,8 @@ namespace Svennebanan
             camera.Zoom = 1f;
             input = new InputHandler();
             level = new Level(resources);
+
+            menu = new MainMenu(resources);
         }
 
         protected override void LoadContent()
@@ -53,8 +63,15 @@ namespace Svennebanan
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            level.Update(gameTime);
-            input.Update();
+            if (state == STATE.Game)
+            {
+                level.Update(gameTime);
+                input.Update();
+            } 
+            else if(state == STATE.Menu)
+            {
+                menu.Update();
+            }
 
             
 
@@ -67,7 +84,14 @@ namespace Svennebanan
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.FrontToBack);
-            level.Draw(spriteBatch);
+            if (state == STATE.Game)
+            {
+                level.Draw(spriteBatch);
+            }
+            else if(state == STATE.Menu)
+            {
+                menu.Draw(spriteBatch);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);

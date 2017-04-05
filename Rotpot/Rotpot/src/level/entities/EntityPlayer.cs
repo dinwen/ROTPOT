@@ -12,17 +12,18 @@ namespace Rotpot.src.level.entities
 {
     public class EntityPlayer : EntityLiving
     {
+        private Vector2 spawn;
 
         private Animation runningAnim, jumpingAnim;
         private bool jumping;
         private int direction = 0;
        
-        public EntityPlayer()
+        public EntityPlayer(Vector2 position)
         {
+            this.position = position;
+            this.spawn = position;
             health = 240;
             movementSpeed = 10;
-
-            position = new Vector2(479 * 128, 12 * 128);
 
             width = 192;
             height = 192;
@@ -36,7 +37,7 @@ namespace Rotpot.src.level.entities
             health = 240;
             strength = 0;
             velocity = new Vector2(0, 0);
-            position = new Vector2(200, 400);
+            position = spawn;
         }
 
         public override void Update(GameTime gameTime)
@@ -53,11 +54,6 @@ namespace Rotpot.src.level.entities
             {
                 velocity.Y += GRAVITY;
                 jumpingAnim.Update();
-
-                if(InputHandler.attack)
-                {
-
-                }
             }
             else
             {
@@ -67,6 +63,10 @@ namespace Rotpot.src.level.entities
                 if (InputHandler.attack)
                 {
                     velocity.Y = -23; //23
+                    for(int i = 0; i < 5; i++)
+                    {
+                        level.entityManager.AddEntity(level, new ParticleDust(new Vector2(position.X + width / 2, position.Y + height + 40), new Vector2(0, -0.4f), 0.5f));
+                    }
                     jumping = true;
                 }
             }
@@ -77,6 +77,8 @@ namespace Rotpot.src.level.entities
 
             if (movement != Vector2.Zero)
             {
+                if(!jumping) level.entityManager.AddEntity(level, new ParticleDust(new Vector2(position.X + width / 2, position.Y + height), new Vector2(direction * 3, -1.5f), 0.3f));
+
                 if (movement.X > 0) direction = 1;
                 else direction = -1;
                 if(velocity.Y == 0) runningAnim.Update();

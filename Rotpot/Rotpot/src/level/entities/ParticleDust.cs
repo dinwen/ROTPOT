@@ -10,17 +10,27 @@ namespace Rotpot.src.level.entities
 {
     class ParticleDust:EntityParticle
     {
-        public ParticleDust(Vector2 Position)
+
+        private float scale;
+
+        public ParticleDust(Vector2 Position, Vector2 direction, float scale)
         {
             position = Position;
+            velocity = new Vector2((float)(rdn.NextDouble() - 0.5f) * 2, (float)(rdn.NextDouble() - 0.8f)) + direction;
+
+            duration = 400 + rdn.Next(0, 100);
+            this.scale = scale;
         }
         public override void Update(GameTime gameTime)
         {
+            velocity *= 0.995f;
 
+            if (--duration <= 0) Remove();
+            position += velocity;
         }
         public override void Draw(SpriteBatch batch)
         {
-            batch.Draw(level.resourceManager.images.GetImage("star"), position, Color.White);
+            batch.Draw(level.resourceManager.images.GetImage("smoke"), position, null, new Color(0.35f, 0.1f, 0.1f, 0.1f), 0, new Vector2(128, 128), scale, SpriteEffects.None, 0.05f);
         }
     }
 }

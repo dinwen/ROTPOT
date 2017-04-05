@@ -49,6 +49,12 @@ namespace Svennebanan
             return distance;
         }
 
+        public float GetDirection(Vector2 secondPosition)
+        {
+            Vector2 delta = secondPosition - position;
+            return (float) Math.Atan2(delta.Y, delta.X);
+        }
+
         public virtual void Draw(SpriteBatch batch)
         {
 

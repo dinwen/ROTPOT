@@ -53,9 +53,28 @@ namespace Svennebanan
             entityManager.Update(gameTime);
             if (--stickCooldown <= 0)
             {
-                entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-1500, 1500) +1920, GetPlayer().GetPosition().Y - 900)));
-                stickCooldown = 200;
+                if (GetPlayer().moving)
+                {
+                    if (GetPlayer().direction == -1)
+                    {
+                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-500, 1000) - 1920, GetPlayer().GetPosition().Y - 700)));
+                        stickCooldown = 200;
+                    }
+                    else if (GetPlayer().direction == 1)
+                    {
+                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-1000, 500) + 1920, GetPlayer().GetPosition().Y - 700)));
+                        stickCooldown = 200;
+                    }
+                }
+                else
+                {
+                    entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-500, 500), GetPlayer().GetPosition().Y - 700)));
+                    stickCooldown = 200;
+                }
             }
+
+
+
             Main.camera.Update();
             background1 = new Vector2((int)((Main.camera.Position.X) / 1920) * 1920, Main.camera.Position.Y);
             background2 = new Vector2((int)((Main.camera.Position.X) / 1920 + 1) * 1920, Main.camera.Position.Y);

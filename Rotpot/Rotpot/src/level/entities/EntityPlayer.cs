@@ -16,7 +16,9 @@ namespace Rotpot.src.level.entities
 
         private Animation runningAnim, jumpingAnim;
         private bool jumping;
-        private int direction = 0;
+
+        public int direction = 0;
+        public bool moving = false;
 
         private int dashCooldown = 10;
         private int dashDirection = 0;
@@ -97,7 +99,8 @@ namespace Rotpot.src.level.entities
             if (dashAlpha > 0) dashAlpha -= 0.02f;
 
             if (movement != Vector2.Zero)
-            { 
+            {
+                moving = true;
                 if (!jumping) level.entityManager.AddEntity(level, new ParticleDust(new Vector2(position.X + width / 2, position.Y + height), new Vector2(direction * 3, -1.5f), 0.3f));
 
                 if (movement.X > 0) direction = 1;
@@ -126,6 +129,7 @@ namespace Rotpot.src.level.entities
             else
             {
                 runningAnim.Reset();
+                moving = false;
             }
             position += movement;
 

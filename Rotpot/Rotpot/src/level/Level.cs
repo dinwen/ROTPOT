@@ -5,6 +5,7 @@ using Rotpot.src.gui;
 using Rotpot.src.level.entities;
 using Rotpot.src.utils;
 using Svennebanan.utils;
+using System;
 using System.Collections.Generic;
 
 namespace Svennebanan
@@ -14,6 +15,10 @@ namespace Svennebanan
 
         private LevelLoader levelLoader;
         public HUD hud;
+
+        protected static Random rdn = new Random();
+        int stickCooldown = 60;
+
 
         //Managers
         public ResourceManager resourceManager;
@@ -46,7 +51,11 @@ namespace Svennebanan
         public void Update(GameTime gameTime)
         {
             entityManager.Update(gameTime);
-
+            if (--stickCooldown <= 0)
+            {
+                entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-1500, 1500) +1920, GetPlayer().GetPosition().Y - 900)));
+                stickCooldown = 200;
+            }
             Main.camera.Update();
             background1 = new Vector2((int)((Main.camera.Position.X) / 1920) * 1920, Main.camera.Position.Y);
             background2 = new Vector2((int)((Main.camera.Position.X) / 1920 + 1) * 1920, Main.camera.Position.Y);

@@ -46,6 +46,7 @@
     <Compile Include="src\level\entities\EntityParticle.cs" />
     <Compile Include="src\level\entities\EntityPig.cs" />
     <Compile Include="src\level\entities\EntityPlayer.cs" />
+    <Compile Include="src\level\entities\EntityStick.cs" />
     <Compile Include="src\level\entities\EntityTest.cs" />
     <Compile Include="src\level\entities\EntityBox.cs" />
     <Compile Include="src\level\entities\ParticleBackground.cs" />

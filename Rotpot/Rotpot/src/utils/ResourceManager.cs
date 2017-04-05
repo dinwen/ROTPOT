@@ -34,6 +34,8 @@ namespace Svennebanan
             images.AddImage("trees", content.Load<Texture2D>("Trees"));
             images.AddImage("box", content.Load<Texture2D>("block"));
 
+            images.AddImage("stick", content.Load<Texture2D>("stick"));
+
             //Menu
             //images.AddImage("play", content.Load<Texture2D>("PLAY"));
             //images.AddImage("quit", content.Load<Texture2D>("QUIT"));

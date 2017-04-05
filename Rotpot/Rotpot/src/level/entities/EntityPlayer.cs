@@ -94,7 +94,7 @@ namespace Rotpot.src.level.entities
             if (InputHandler.left) movement += new Vector2(-movementSpeed, 0);
             if (InputHandler.right) movement += new Vector2(movementSpeed, 0);
 
-            strength++;
+            if(strength < 100) strength++;
             dashCooldown--;
             if (dashAlpha > 0) dashAlpha -= 0.02f;
 
@@ -109,7 +109,7 @@ namespace Rotpot.src.level.entities
 
                 if (strength >= 50 && InputHandler.shift && dashCooldown <= 0)
                 {
-                    strength -= 50;
+                    strength -= 10;
                     dashCooldown = 10;
                     strength -= 50;
                     dashRectangle = runningAnim.GetRectangle();

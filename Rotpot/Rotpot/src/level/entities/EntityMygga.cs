@@ -16,7 +16,6 @@ namespace Rotpot.src.level.entities
         int direction;
         public float patrolSpeed;
         private Animation animation;
-        public Rectangle headRectangle;
         public bool isRetreat, isAttack;
 
         public EntityMygga(Vector2 position)
@@ -32,15 +31,12 @@ namespace Rotpot.src.level.entities
 
             width = 128;
             height = 128;
-            animation = new Animation(5, 0, 0, width, height, 4, 0, true);
+            animation = new Animation(5, 0, 0, width, height, 4, 1, true);
         }
-
-
 
         //animation?
         public override void Draw(SpriteBatch batch)
         {
-            Console.WriteLine("awdawda");
             if (direction == 0)
                 batch.Draw(level.resourceManager.images.GetImage("mygga 128x128"), position, animation.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
             if (direction == 1)
@@ -49,79 +45,44 @@ namespace Rotpot.src.level.entities
 
         public override void Update(GameTime gameTime)
         {
-
-            isAttack = true;
             animation.Update();
+
+            if(!isRetreat) myggaAttack();
+            else myggaRetreat();
 
             if (isAttack)
             {
-                myggaAttack();
             }
             //Attacking/ dealing dmg / close
-            if (GetDistance(level.GetPlayer().GetPosition()) < 50)
+            if (!isRetreat && GetDistance(level.GetPlayer().GetPosition()) < 50)
             {
                 level.GetPlayer().Damage(10);
                 movementSpeed = 0;
-                myggaRetreat();
-                isAttack = false;
+                isRetreat = true;
             }
-            if (GetDistance(level.GetPlayer().GetPosition()) > 2000)
+            if (GetDistance(level.GetPlayer().GetPosition()) > 500)
             {
                 isRetreat = false;
             }
-
-
             CheckCollision();
-
         }
 
         public void myggaRetreat()
         {
-
-
-            if (level.GetPlayer().GetPosition().X < position.X)
-            {
-                direction = 0;
-                position -= new Vector2(-movementSpeed + 2, 0);
-            }
-
-            if (level.GetPlayer().GetPosition().X > position.X)
-            {
-                direction = 1;
-                position -= new Vector2(movementSpeed + 2, 0);
-
-            }
+            EntityPlayer player = level.GetPlayer();
+            float dir = GetDirection(player.GetPosition());
+            float xs = (float)Math.Cos(dir) * 15;
+            float ys = (float)Math.Sin(dir) * 15;
+            position += new Vector2(-xs, -ys);
         }
 
         public void myggaAttack()
         {
-            if (level.GetPlayer().GetPosition().X < position.X)
-            {
-                direction = 0;
-                position += new Vector2(-movementSpeed, 0);
-            }
-
-            if (level.GetPlayer().GetPosition().X > position.X)
-            {
-                direction = 1;
-                position += new Vector2(movementSpeed, 0);
-            }
-
-            if(level.GetPlayer().GetPosition().Y < position.Y)
-            {
-
-                position += new Vector2(-movementSpeed, 0);
-
-            }
-
-            if (level.GetPlayer().GetPosition().Y > position.Y)
-            {
-
-                position -= new Vector2(-movementSpeed, 0);
-            }
-            
-
-
+            EntityPlayer player = level.GetPlayer();
+            float dir = GetDirection(player.GetPosition());
+            float xs = (float)Math.Cos(dir) * 7;
+            float ys = (float)Math.Sin(dir) * 7;
+            position += new Vector2(xs, ys);
         }
     }
 }

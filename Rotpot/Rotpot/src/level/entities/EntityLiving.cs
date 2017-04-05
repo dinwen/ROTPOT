@@ -85,29 +85,50 @@ namespace Rotpot.src.level.entities
             return false;
         }
 
-        public void CheckCollision()
+        public bool CheckCollision()
         {
+            Entity stepper = Entity.firstEntity;
+            if(this != stepper && GetDistance(stepper.GetPosition()) < 40)
+            {
+                float direction = GetDirection(stepper.GetPosition());
+                stepper.SetPosition(stepper.GetPosition() + new Vector2((float)Math.Cos(direction), (float)Math.Sin(direction)));
+            }
+            while(stepper.nextEntity != null)
+            {
+                stepper = stepper.nextEntity;
+                if (this != stepper && GetDistance(stepper.GetPosition()) < 40)
+                {
+                    float direction = GetDirection(stepper.GetPosition());
+                    stepper.SetPosition(stepper.GetPosition() + new Vector2((float)Math.Cos(direction), (float)Math.Sin(direction)));
+                }
+            }
+
             foreach (Tile t in level.tiles)
             {
                 if (GetBoundsTop().Intersects(t.GetBounds()))
                 {
                     position.Y = t.position.Y + t.collision.Height;
                     velocity.Y = 1;
+                    return true;
                 }
                 if (GetBoundsBottom().Intersects(t.GetBounds()))
                 {
                     Console.WriteLine("Tiles");
                     position.Y = t.position.Y - height + t.offset.Y;
+                    return true;
                 }
                 if (GetBoundsLeft().Intersects(t.GetBounds()))
                 {
                     position.X = t.position.X + t.collision.Height;
+                    return true;
                 }
                 if (GetBoundsRight().Intersects(t.GetBounds()))
                 {
                     position.X = t.position.X - width + t.offset.X;
+                    return true;
                 }
             }
+            return false;
         }
 
 

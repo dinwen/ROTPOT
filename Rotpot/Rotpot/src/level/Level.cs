@@ -5,6 +5,7 @@ using Rotpot.src.gui;
 using Rotpot.src.level.entities;
 using Rotpot.src.utils;
 using Svennebanan.utils;
+using System;
 using System.Collections.Generic;
 
 namespace Svennebanan
@@ -15,6 +16,10 @@ namespace Svennebanan
         private LevelLoader levelLoader;
         public HUD hud;
 
+        protected static Random rdn = new Random();
+        int stickCooldown = 60;
+
+
         //Managers
         public ResourceManager resourceManager;
         public EntityManager entityManager;
@@ -23,22 +28,22 @@ namespace Svennebanan
 
         public List<Tile> tiles = new List<Tile>();
 
-        private Vector2 bg1, bg2;
-        private Vector2 bg3, bg4;
+        private Vector2 background1, background2;
+        private Vector2 background3, background4;
 
         public Level(ResourceManager resources)
         {
             this.resourceManager = resources;
             levelLoader = new LevelLoader(resources, "Content/levels/Level2.txt");
             tiles = levelLoader.GetLevelTiles();
-
             
             entityManager = new EntityManager(this);
             creationManager = new CreationManager(this);
 
-            entityManager.AddEntity(this, new EntityPlayer());
-            entityManager.AddEntity(this, new EntityBox(new Vector2(489 * 128, 12 * 128)));
+            entityManager.AddEntity(this, new EntityPlayer(new Vector2(100, 100)));
+            entityManager.AddEntity(this, new EntityBox(new Vector2(469 * 128, 14 * 128)));
             entityManager.AddEntity(this, new EntityPig(new Vector2(9600, 100)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
             hud = new HUD(resources, this);
 
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);
@@ -47,12 +52,16 @@ namespace Svennebanan
         public void Update(GameTime gameTime)
         {
             entityManager.Update(gameTime);
-
+            if (--stickCooldown <= 0)
+            {
+                entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-1500, 1500) +1920, GetPlayer().GetPosition().Y - 900)));
+                stickCooldown = 200;
+            }
             Main.camera.Update();
-            bg1 = new Vector2((int)((Main.camera.Position.X) / 1920) * 1920, Main.camera.Position.Y);
-            bg2 = new Vector2((int)((Main.camera.Position.X) / 1920 + 1) * 1920, Main.camera.Position.Y);
-            bg3 = new Vector2((int)((Main.camera.Position.X*1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5), Main.camera.Position.Y);
-            bg4 = new Vector2((int)((Main.camera.Position.X * 1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5) + 1920, Main.camera.Position.Y);
+            background1 = new Vector2((int)((Main.camera.Position.X) / 1920) * 1920, Main.camera.Position.Y);
+            background2 = new Vector2((int)((Main.camera.Position.X) / 1920 + 1) * 1920, Main.camera.Position.Y);
+            background3 = new Vector2((int)((Main.camera.Position.X*1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5), Main.camera.Position.Y);
+            background4 = new Vector2((int)((Main.camera.Position.X * 1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5) + 1920, Main.camera.Position.Y);
         }
 
         public EntityPlayer GetPlayer()
@@ -62,17 +71,17 @@ namespace Svennebanan
 
         public void Draw(SpriteBatch batch)
         {
-            batch.Draw(resourceManager.images.GetImage("background"), bg1, Color.White);
-            batch.Draw(resourceManager.images.GetImage("background"), bg2, Color.White);
-            batch.Draw(resourceManager.images.GetImage("trees"), bg3, Color.White);
-            batch.Draw(resourceManager.images.GetImage("trees"), bg4, Color.White);
+            batch.Draw(resourceManager.images.GetImage("background"), background1, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
+            batch.Draw(resourceManager.images.GetImage("background"), background2, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
+            batch.Draw(resourceManager.images.GetImage("trees"), background3, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
+            batch.Draw(resourceManager.images.GetImage("trees"), background4, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
 
 
             entityManager.Draw(batch);
 
             foreach (Tile t in tiles)
             {
-                batch.Draw(resourceManager.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White);
+                batch.Draw(resourceManager.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.1f);
             }
 
             hud.Draw(batch);

@@ -40,11 +40,15 @@
   <ItemGroup>
     <Compile Include="src\gui\Button.cs" />
     <Compile Include="src\gui\HUD.cs" />
+    <Compile Include="src\gui\MainMenu.cs" />
     <Compile Include="src\level\entities\Entity.cs" />
     <Compile Include="src\level\entities\EntityLiving.cs" />
+    <Compile Include="src\level\entities\EntityMushroom.cs" />
+    <Compile Include="src\level\entities\EntityMygga.cs" />
     <Compile Include="src\level\entities\EntityParticle.cs" />
     <Compile Include="src\level\entities\EntityPig.cs" />
     <Compile Include="src\level\entities\EntityPlayer.cs" />
+    <Compile Include="src\level\entities\EntityStick.cs" />
     <Compile Include="src\level\entities\EntityTest.cs" />
     <Compile Include="src\level\entities\EntityBox.cs" />
     <Compile Include="src\level\entities\ParticleBackground.cs" />

@@ -18,9 +18,11 @@ namespace Rotpot.src.level.entities
         private Animation animation;
         public bool isRetreat, isAttack;
 
+        private float rotation;
+
         public EntityMygga(Vector2 position)
         {
-            movementSpeed = 5;
+            movementSpeed = 20;
             patrolSpeed = 3;
 
 
@@ -31,23 +33,32 @@ namespace Rotpot.src.level.entities
 
             width = 128;
             height = 128;
-            animation = new Animation(5, 0, 0, width, height, 4, 1, true);
+            animation = new Animation(2, 0, 0, width, height, 5*width, height, true);
+            width = 128/ 2;
+            height = 128/2;
         }
 
         //animation?
         public override void Draw(SpriteBatch batch)
         {
+            animation.Update();
+
             if (direction == 0)
-                batch.Draw(level.resourceManager.images.GetImage("mygga 128x128"), position, animation.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+                batch.Draw(level.resourceManager.images.GetImage("mygga 128x128"), position, animation.GetRectangle(), Color.White, rotation, new Vector2(64, 64), 1, SpriteEffects.FlipVertically, 0.5f);
             if (direction == 1)
-                batch.Draw(level.resourceManager.images.GetImage("mygga 128x128"), position, animation.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
+                batch.Draw(level.resourceManager.images.GetImage("mygga 128x128"), position, animation.GetRectangle(), Color.White, rotation, new Vector2(64, 64), 1, SpriteEffects.FlipHorizontally, 0.5f);
+        }
+
+        public override void Reset()
+        {
+            position = new Vector2(-350, 2600);
         }
 
         public override void Update(GameTime gameTime)
         {
-            animation.Update();
+            CheckCollision();
 
-            if(!isRetreat) myggaAttack();
+            if (!isRetreat) myggaAttack();
             else myggaRetreat();
 
             if (isAttack)
@@ -64,7 +75,13 @@ namespace Rotpot.src.level.entities
             {
                 isRetreat = false;
             }
-            CheckCollision();
+
+            if (OnGround())
+            {
+                isRetreat = true;
+            }
+
+            rotation = GetDirection(level.GetPlayer().GetPosition()) - MathHelper.ToRadians(180);
         }
 
         public void myggaRetreat()

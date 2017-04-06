@@ -60,6 +60,11 @@ namespace Svennebanan
 
         }
 
+        public virtual void Reset()
+        {
+
+        }
+
         public void Remove()
         {
             remove = true;

@@ -40,25 +40,33 @@ namespace Svennebanan
             entityManager = new EntityManager(this);
             creationManager = new CreationManager(this);
 
-            entityManager.AddEntity(this, new EntityPlayer(new Vector2(100, 100)));
+            entityManager.AddEntity(this, new EntityPlayer(new Vector2(100, 2800)));
             entityManager.AddEntity(this, new EntityBox(new Vector2(469 * 128, 14 * 128)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
             hud = new HUD(resources, this);
 
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);
+            Reset();
+        }
+
+        public void Reset()
+        {
+            Entity stepper = Entity.firstEntity;
+            stepper.Reset();
+            while (stepper.nextEntity != null)
+            {
+                stepper = stepper.nextEntity;
+                stepper.Reset();
+            }
         }
 
         public void Update(GameTime gameTime)
@@ -70,19 +78,19 @@ namespace Svennebanan
                 {
                     if (GetPlayer().direction == -1)
                     {
-                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-500, 1000) - 1920, GetPlayer().GetPosition().Y - 700)));
-                        stickCooldown = 200;
+                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-500, 1000) - 800, GetPlayer().GetPosition().Y - 700)));
+                        stickCooldown = 50;
                     }
                     else if (GetPlayer().direction == 1)
                     {
-                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-1000, 500) + 1920, GetPlayer().GetPosition().Y - 700)));
-                        stickCooldown = 200;
+                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-1000, 500) + 800, GetPlayer().GetPosition().Y - 700)));
+                        stickCooldown = 50;
                     }
                 }
                 else
                 {
                     entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-500, 500), GetPlayer().GetPosition().Y - 700)));
-                    stickCooldown = 200;
+                    stickCooldown = 50;
                 }
             }
 

@@ -88,12 +88,12 @@ namespace Rotpot.src.level.entities
         public bool CheckCollision()
         {
             Entity stepper = Entity.firstEntity;
-            if(this != stepper && GetDistance(stepper.GetPosition()) < 40)
+            if (this != stepper && GetDistance(stepper.GetPosition()) < 40)
             {
                 float direction = GetDirection(stepper.GetPosition());
                 stepper.SetPosition(stepper.GetPosition() + new Vector2((float)Math.Cos(direction), (float)Math.Sin(direction)));
             }
-            while(stepper.nextEntity != null)
+            while (stepper.nextEntity != null)
             {
                 stepper = stepper.nextEntity;
                 if (this != stepper && GetDistance(stepper.GetPosition()) < 40)
@@ -113,7 +113,6 @@ namespace Rotpot.src.level.entities
                 }
                 if (GetBoundsBottom().Intersects(t.GetBounds()))
                 {
-                    Console.WriteLine("Tiles");
                     position.Y = t.position.Y - height + t.offset.Y;
                     return true;
                 }

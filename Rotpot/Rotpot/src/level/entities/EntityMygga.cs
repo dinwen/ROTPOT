@@ -16,7 +16,7 @@ namespace Rotpot.src.level.entities
         int direction;
         public float patrolSpeed;
         private Animation animation;
-        public bool isRetreat, isAttack;
+        public bool isRetreat;
 
         private float rotation;
 
@@ -51,7 +51,7 @@ namespace Rotpot.src.level.entities
 
         public override void Reset()
         {
-            position = new Vector2(-350, 2600);
+            position = new Vector2(-350, 43 * 128);
         }
 
         public override void Update(GameTime gameTime)
@@ -61,9 +61,8 @@ namespace Rotpot.src.level.entities
             if (!isRetreat) myggaAttack();
             else myggaRetreat();
 
-            if (isAttack)
-            {
-            }
+            if (level.GetPlayer().GetPosition().X > 20000) Remove();
+
             //Attacking/ dealing dmg / close
             if (!isRetreat && GetDistance(level.GetPlayer().GetPosition()) < 50)
             {
@@ -97,8 +96,8 @@ namespace Rotpot.src.level.entities
         {
             EntityPlayer player = level.GetPlayer();
             float dir = GetDirection(player.GetPosition());
-            float xs = (float)Math.Cos(dir) * 7;
-            float ys = (float)Math.Sin(dir) * 7;
+            float xs = (float)Math.Cos(dir) * 10;
+            float ys = (float)Math.Sin(dir) * 10;
             position += new Vector2(xs, ys);
         }
     }

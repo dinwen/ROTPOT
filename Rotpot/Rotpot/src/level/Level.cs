@@ -34,14 +34,14 @@ namespace Svennebanan
         public Level(ResourceManager resources)
         {
             this.resourceManager = resources;
-            levelLoader = new LevelLoader(resources, "Content/levels/Level2.txt");
+            levelLoader = new LevelLoader(resources, "Content/levels/level11.txt");
             tiles = levelLoader.GetLevelTiles();
             
             entityManager = new EntityManager(this);
             creationManager = new CreationManager(this);
 
-            entityManager.AddEntity(this, new EntityPlayer(new Vector2(100, 2800)));
-            entityManager.AddEntity(this, new EntityBox(new Vector2(469 * 128, 14 * 128)));
+            entityManager.AddEntity(this, new EntityPlayer(new Vector2(2 * 128, 47 * 128)));
+            entityManager.AddEntity(this, new EntityBox(new Vector2(226 * 128, 40 * 128)));
             entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
             entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
             entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));

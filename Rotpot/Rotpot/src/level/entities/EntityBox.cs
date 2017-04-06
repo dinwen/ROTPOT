@@ -37,6 +37,7 @@ namespace Rotpot.src.level.entities
                 velocity = new Vector2(0, 0);
             }
 
+            isMoving = false;
             EntityPlayer player = level.GetPlayer();
             if (GetBoundsLeft().Intersects(player.GetBoundsFull()))
             {
@@ -50,7 +51,7 @@ namespace Rotpot.src.level.entities
                 position.X = player.GetPosition().X - width;
                 player.movementSpeed = 1f;
             }
-            if(player.GetBoundsInGround().Intersects(GetBoundsFull()))
+            if (player.GetBoundsInGround().Intersects(GetBoundsFull()))
             {
                 player.SetPosition(new Vector2(player.GetPosition().X, position.Y - player.height));
                 player.SetVelocity(new Vector2(0, 0));
@@ -69,6 +70,7 @@ namespace Rotpot.src.level.entities
                     cooldown = 120;
                 }
             }
+
 
         }
 

@@ -53,7 +53,7 @@ namespace Rotpot.src.level.entities
                 velocity = new Vector2(0, 0);
             }
 
-            if (GetDistance(level.GetPlayer().GetPosition()) < 500)
+            if (GetDistance(level.GetPlayer().GetPosition()) < 1000)
             {
                 pigAlert();
                 animation.Update();

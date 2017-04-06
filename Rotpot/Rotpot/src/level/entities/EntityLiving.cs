@@ -130,6 +130,10 @@ namespace Rotpot.src.level.entities
             return false;
         }
 
+        public Vector2 GetVelocity()
+        {
+            return velocity;
+        }
 
         //Collision Boxes
 

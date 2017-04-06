@@ -68,6 +68,12 @@ namespace Rotpot.src.level.entities
                 level.GetPlayer().Damage(1);
             }
 
+            if(level.GetPlayer().GetBoundsInGround().Intersects(this.GetBoundsFull()) && level.GetPlayer().GetVelocity().Y > 0)
+            {
+                level.GetPlayer().SetVelocity(new Vector2(level.GetPlayer().GetVelocity().X, -10));
+                Remove();
+            }
+
             position += velocity;
             CheckCollision();
         }

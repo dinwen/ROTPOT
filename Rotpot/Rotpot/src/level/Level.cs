@@ -13,12 +13,10 @@ namespace Svennebanan
     public class Level
     {
 
-        private LevelLoader levelLoader;
+        protected LevelLoader levelLoader;
         public HUD hud;
 
-        protected static Random rdn = new Random();
-        int stickCooldown = 60;
-
+        protected static Random random = new Random();
 
         //Managers
         public ResourceManager resourceManager;
@@ -26,80 +24,52 @@ namespace Svennebanan
         public CreationManager creationManager;
         public InputHandler inputHandler;
 
+        //List of all the loaded tiles
         public List<Tile> tiles = new List<Tile>();
 
-        private Vector2 background1, background2;
-        private Vector2 background3, background4;
+        //Backgrounds
+        protected Vector2 background1, background2;
+        protected Vector2 background3, background4;
 
         public Level(ResourceManager resources)
         {
             this.resourceManager = resources;
-            levelLoader = new LevelLoader(resources, "Content/levels/level11.txt");
-            tiles = levelLoader.GetLevelTiles();
-            
-            entityManager = new EntityManager(this);
-            creationManager = new CreationManager(this);
-
-            entityManager.AddEntity(this, new EntityPlayer(new Vector2(2 * 128, 47 * 128)));
-            entityManager.AddEntity(this, new EntityBox(new Vector2(226 * 128, 40 * 128)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
             hud = new HUD(resources, this);
 
-            Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);
+
+            entityManager = new EntityManager(this);
+            creationManager = new CreationManager(this);
+        }
+
+        public void LoadLevel(string levelPath)
+        {
+            levelLoader = new LevelLoader(resourceManager, "Content/levels/level11.txt");
+            tiles = levelLoader.GetLevelTiles();
             Reset();
         }
 
         public void Reset()
         {
             Entity stepper = Entity.firstEntity;
-            stepper.Reset();
-            while (stepper.nextEntity != null)
+            if (stepper != null)
             {
-                stepper = stepper.nextEntity;
                 stepper.Reset();
+                while (stepper.nextEntity != null)
+                {
+                    stepper = stepper.nextEntity;
+                    stepper.Reset();
+                }
             }
         }
 
-        public void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime)
         {
             entityManager.Update(gameTime);
-            if (--stickCooldown <= 0)
-            {
-                if (GetPlayer().moving)
-                {
-                    if (GetPlayer().direction == -1)
-                    {
-                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-500, 1000) - 800, GetPlayer().GetPosition().Y - 700)));
-                        stickCooldown = 50;
-                    }
-                    else if (GetPlayer().direction == 1)
-                    {
-                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-1000, 500) + 800, GetPlayer().GetPosition().Y - 700)));
-                        stickCooldown = 50;
-                    }
-                }
-                else
-                {
-                    entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + rdn.Next(-500, 500), GetPlayer().GetPosition().Y - 700)));
-                    stickCooldown = 50;
-                }
-            }
-
-
 
             Main.camera.Update();
             background1 = new Vector2((int)((Main.camera.Position.X) / 1920) * 1920, Main.camera.Position.Y);
             background2 = new Vector2((int)((Main.camera.Position.X) / 1920 + 1) * 1920, Main.camera.Position.Y);
-            background3 = new Vector2((int)((Main.camera.Position.X*1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5), Main.camera.Position.Y);
+            background3 = new Vector2((int)((Main.camera.Position.X * 1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5), Main.camera.Position.Y);
             background4 = new Vector2((int)((Main.camera.Position.X * 1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5) + 1920, Main.camera.Position.Y);
         }
 

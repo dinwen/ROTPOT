@@ -43,14 +43,17 @@ namespace Rotpot.src.utils
         {
             Entity step = Entity.firstEntity;
 
-            while (step.id != id)
+            if (step != null)
             {
-                if (step.nextEntity == null)
+                while (step.id != id)
                 {
-                    step = null;
-                    break;
+                    if (step.nextEntity == null)
+                    {
+                        step = null;
+                        break;
+                    }
+                    step = step.nextEntity;
                 }
-                step = step.nextEntity;
             }
 
             return step;

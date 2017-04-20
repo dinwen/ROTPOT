@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Svennebanan
 {
-    class LevelLoader
+    public class LevelLoader
     {
 
         private List<Tile> loadedTiles = new List<Tile>();

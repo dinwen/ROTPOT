@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Rotpot.src.gui;
+using Rotpot.src.level;
 using Rotpot.src.level.entities;
 using Rotpot.src.utils;
 using Svennebanan;
@@ -42,7 +43,7 @@ namespace Svennebanan
             camera = new Camera(GraphicsDevice.Viewport);
             camera.Zoom = 1f;
             input = new InputHandler();
-            level = new Level(resources);
+            level = new LevelOne(resources);
 
             menu = new MainMenu(resources);
         }

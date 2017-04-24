@@ -61,12 +61,7 @@ namespace Rotpot.src.level.entities
         public void SetVelocity(Vector2 vel)
         {
             this.velocity = vel;
-        }
-
-        public Vector2 GetVelocity()
-        {
-            return velocity;
-        }
+        } 
 
         public bool OnGround()
         {

@@ -153,4 +153,3 @@ C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\obj\x86\Debug\Rotpot.
 C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\stick.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\mygga 128x128.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\stick.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\mygga 128x128.xnb

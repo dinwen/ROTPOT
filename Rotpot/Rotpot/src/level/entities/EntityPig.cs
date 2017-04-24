@@ -53,7 +53,7 @@ namespace Rotpot.src.level.entities
                 velocity = new Vector2(0, 0);
             }
 
-            if (GetDistance(level.GetPlayer().GetPosition()) < 500)
+            if (GetDistance(level.GetPlayer().GetPosition()) < 1000)
             {
                 pigAlert();
                 animation.Update();
@@ -66,6 +66,12 @@ namespace Rotpot.src.level.entities
             if (GetDistance(level.GetPlayer().GetPosition()) < 120)
             {
                 level.GetPlayer().Damage(1);
+            }
+
+            if(level.GetPlayer().GetBoundsInGround().Intersects(this.GetBoundsFull()) && level.GetPlayer().GetVelocity().Y > 0)
+            {
+                level.GetPlayer().SetVelocity(new Vector2(level.GetPlayer().GetVelocity().X, -10));
+                Remove();
             }
 
             position += velocity;

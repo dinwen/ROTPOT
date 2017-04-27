@@ -337,6 +337,7 @@
 /processorParam:TextureFormat=Color
 /build:stick.png
 
+
 #begin leaves64x64.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -347,5 +348,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:leaves64x64.png
+
 

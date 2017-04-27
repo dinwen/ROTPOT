@@ -21,6 +21,7 @@ namespace Rotpot.src.level
             LoadLevel("Content/levels/level11.txt");
 
             entityManager.AddEntity(this, new EntityPlayer(new Vector2(2 * 128, 47 * 128)));
+            entityManager.AddEntity(this, new EntitySign(new Vector2(2 * 128, 47 * 128), 1));
             entityManager.AddEntity(this, new EntityBox(new Vector2(226 * 128, 40 * 128)));
             entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
             entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));

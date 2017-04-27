@@ -59,7 +59,7 @@ namespace Svennebanan
                 sprint = false;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            if (Keyboard.GetState().IsKeyDown(Keys.Space) || Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 if(!releaseJump) attack = true;
             }

@@ -17,14 +17,15 @@ namespace Rotpot.src.level.entities
         public float patrolSpeed;
         private Animation animation;
         public bool isRetreat;
+        private bool avoidGround;
+        private int avoidGruondCooldown = 30;
 
         private float rotation;
 
         public EntityMygga(Vector2 position)
         {
-            movementSpeed = 20;
+            movementSpeed = 30;
             patrolSpeed = 3;
-
 
             health = 1;
             strength = 1;
@@ -56,18 +57,11 @@ namespace Rotpot.src.level.entities
 
         public override void Update(GameTime gameTime)
         {
-            CheckCollision();
-
-            if (!isRetreat) myggaAttack();
-            else myggaRetreat();
-
-            if (level.GetPlayer().GetPosition().X > 20000) Remove();
-
             //Attacking/ dealing dmg / close
             if (!isRetreat && GetDistance(level.GetPlayer().GetPosition()) < 50)
             {
                 level.GetPlayer().Damage(10);
-                movementSpeed = 0;
+                movementSpeed = 15;
                 isRetreat = true;
             }
             if (GetDistance(level.GetPlayer().GetPosition()) > 500)
@@ -77,7 +71,28 @@ namespace Rotpot.src.level.entities
 
             if (OnGround())
             {
-                isRetreat = true;
+                avoidGround = true;
+            }
+            if (level.GetPlayer().GetPosition().X > 20000) isRetreat = true;
+
+            if (avoidGround)
+            {
+
+            }
+
+            if (!avoidGround)
+            {
+                if (!isRetreat) myggaAttack();
+                else myggaRetreat();
+            }
+            else
+            {
+                position += new Vector2(0, -6f);
+                if(--avoidGruondCooldown <= 0)
+                {
+                    avoidGruondCooldown = 30;
+                    avoidGround = false;
+                }
             }
 
             rotation = GetDirection(level.GetPlayer().GetPosition()) - MathHelper.ToRadians(180);
@@ -90,6 +105,7 @@ namespace Rotpot.src.level.entities
             float xs = (float)Math.Cos(dir) * 15;
             float ys = (float)Math.Sin(dir) * 15;
             position += new Vector2(-xs, -ys);
+            CheckCollision();
         }
 
         public void myggaAttack()
@@ -99,6 +115,7 @@ namespace Rotpot.src.level.entities
             float xs = (float)Math.Cos(dir) * 10;
             float ys = (float)Math.Sin(dir) * 10;
             position += new Vector2(xs, ys);
+            CheckCollision();
         }
     }
 }

@@ -155,8 +155,6 @@ namespace Rotpot.src.level.entities
             if (position.Y > 7000) health-= 3;
 
             CheckCollision();
-            
-
 
             if (health <= 0)
             {

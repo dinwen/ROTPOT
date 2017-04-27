@@ -23,7 +23,7 @@ namespace Svennebanan
         protected static Random rdn = new Random();
 
 
-        public void Init(Level level)
+        public virtual void Init(Level level)
         {
             this.level = level;
         }

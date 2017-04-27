@@ -27,8 +27,18 @@ namespace Rotpot.src.level.entities
             velocity = new Vector2(0, 5);
 
             size = new Vector2(128, 128);
-
         }
+
+        public override void Init(Level level)
+        {
+            base.Init(level);
+
+            for (int i = 0; i < 20; i++)
+            {
+                level.entityManager.AddEntity(level, new ParticleLeaf(new Vector2(position.X + rdn.Next(128), level.GetPlayer().GetPosition().Y - 800)));
+            }
+        }
+
         public override void Update(GameTime gameTime)
         {
             rotation += 0.03f;

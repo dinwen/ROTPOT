@@ -18,7 +18,7 @@ namespace Rotpot.src.level
 
         public LevelOne(ResourceManager resources) : base(resources)
         {
-            LoadLevel("Content/levels/level11.txt");
+            LoadLevel("Content/levels/Level1.txt");
 
             entityManager.AddEntity(this, new EntityPlayer(new Vector2(2 * 128, 47 * 128)));
             entityManager.AddEntity(this, new EntityBox(new Vector2(226 * 128, 40 * 128)));
@@ -47,18 +47,18 @@ namespace Rotpot.src.level
                 {
                     if (GetPlayer().direction == -1)
                     {
-                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-500, 1000) - 800, GetPlayer().GetPosition().Y - 700)));
+                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-500, 1000) - 800, GetPlayer().GetPosition().Y - 2400)));
                         stickCooldown = 50;
                     }
                     else if (GetPlayer().direction == 1)
                     {
-                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-1000, 500) + 800, GetPlayer().GetPosition().Y - 700)));
+                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-1000, 500) + 800, GetPlayer().GetPosition().Y - 2400)));
                         stickCooldown = 50;
                     }
                 }
                 else
                 {
-                    entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-500, 500), GetPlayer().GetPosition().Y - 700)));
+                    entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-500, 500), GetPlayer().GetPosition().Y - 2400)));
                     stickCooldown = 50;
                 }
             }

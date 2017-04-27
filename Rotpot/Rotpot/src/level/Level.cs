@@ -36,14 +36,13 @@ namespace Svennebanan
             this.resourceManager = resources;
             hud = new HUD(resources, this);
 
-
             entityManager = new EntityManager(this);
             creationManager = new CreationManager(this);
         }
 
         public void LoadLevel(string levelPath)
         {
-            levelLoader = new LevelLoader(resourceManager, "Content/levels/level11.txt");
+            levelLoader = new LevelLoader(resourceManager, "Content/levels/level2.txt");
             tiles = levelLoader.GetLevelTiles();
             Reset();
         }
@@ -84,7 +83,6 @@ namespace Svennebanan
             batch.Draw(resourceManager.images.GetImage("background"), background2, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0f);
             batch.Draw(resourceManager.images.GetImage("trees"), background3, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
             batch.Draw(resourceManager.images.GetImage("trees"), background4, null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.01f);
-
 
             entityManager.Draw(batch);
 

@@ -18,6 +18,7 @@ namespace Rotpot.src.level.entities
 
             velocity = new Vector2((float)(rdn.NextDouble() - 0.5f) * 4, (float)(rdn.NextDouble() - 0.8f) * 4);
         }
+
         public override void Update(GameTime gameTime)
         {
             if (--duration <= 0)
@@ -26,6 +27,7 @@ namespace Rotpot.src.level.entities
             }
             position += velocity;
         }
+
         public override void Draw(SpriteBatch batch)
         {
             //batch.Draw(level.resourceManager.images.GetImage("star"), position, new Color(Color.White, duration / 60f));

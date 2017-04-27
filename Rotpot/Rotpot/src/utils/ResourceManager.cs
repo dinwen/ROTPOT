@@ -34,6 +34,7 @@ namespace Svennebanan
             images.AddImage("trees", content.Load<Texture2D>("Trees"));
             images.AddImage("box", content.Load<Texture2D>("block"));
             images.AddImage("mygga 128x128", content.Load<Texture2D>("mygga 128x128"));
+            images.AddImage("leaf", content.Load<Texture2D>("leaves64x64"));
 
             images.AddImage("stick", content.Load<Texture2D>("stick"));
 

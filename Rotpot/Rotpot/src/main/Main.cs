@@ -22,10 +22,10 @@ namespace Svennebanan
 
         public enum STATE
         {
-            Game, Menu
+            Game, Menu, Quit
         };
 
-        public static STATE state = STATE.Game;
+        public static STATE state = STATE.Menu;
 
         public Main()
         {
@@ -33,6 +33,7 @@ namespace Svennebanan
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
+            IsMouseVisible = true;
             Content.RootDirectory = "Content";
         }
 
@@ -45,7 +46,7 @@ namespace Svennebanan
             input = new InputHandler();
             level = new LevelOne(resources);
 
-            menu = new MainMenu(resources);
+            menu = new MainMenu(resources, new Vector2(), level);
         }
 
         protected override void LoadContent()
@@ -62,7 +63,15 @@ namespace Svennebanan
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                
+            }
+
+
+            if (state == STATE.Quit)
+            {
                 Exit();
+            }
 
             if (state == STATE.Game)
             {
@@ -93,6 +102,21 @@ namespace Svennebanan
             {
                 menu.Draw(spriteBatch);
             }
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape) && Main.state == Main.STATE.Game)
+            {
+
+
+                if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+                    Main.state = Main.STATE.Menu;
+                }
+
+                if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+
+                }
+            }
+
             spriteBatch.End();
 
             base.Draw(gameTime);

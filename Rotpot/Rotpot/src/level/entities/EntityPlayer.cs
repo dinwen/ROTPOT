@@ -14,11 +14,12 @@ namespace Rotpot.src.level.entities
     {
         private Vector2 spawn;
 
-        private Animation runningAnim, jumpingAnim, idleAnim;
+        private Animation runningAnim, jumpingAnim, idleAnim, deathAnim;
         private bool jumping;
 
         public int direction = 0;
         public bool moving = false;
+        private bool dying = false;
 
         private int dashCooldown = 10;
         private int dashDirection = 0;
@@ -40,6 +41,7 @@ namespace Rotpot.src.level.entities
             runningAnim = new Animation(5, 0, 0, width, height, 12 * width, height, true);
             jumpingAnim = new Animation(5, 0, 1, width, height, 9 * width, height * 2, false);
             idleAnim = new Animation(10, 0, 2, width, height, 4 * width, height * 3, true);
+            deathAnim = new Animation(5, 0, 4, width, height, 8 * width, height * 5, false);
             width = 150;
             strength = 100;
         }
@@ -51,6 +53,8 @@ namespace Rotpot.src.level.entities
             velocity = new Vector2(0, 0);
             position = spawn;
             level.Reset();
+            deathAnim.Reset();
+            dying = false;
         }
 
         public void Knockback(Entity stick)
@@ -152,13 +156,29 @@ namespace Rotpot.src.level.entities
 
             position += velocity;
 
-            if (position.Y > 7000) health-= 3;
+            if (position.Y > level.height) health-= 3;
+            if (position.X < 0) position.X = 0;
+            else if (position.X > level.width - width)
+            {
+                level.ClearLevel();
+                level.ChangeLevel(new LevelOne(level.resourceManager));
+                return;
+            }
 
             CheckCollision();
 
             if (health <= 0)
             {
-                this.Respawn();
+                dying = true;
+            }
+
+            if(dying)
+            {
+                deathAnim.Update();
+                if (deathAnim.hasEnded)
+                {
+                    this.Respawn();
+                }
             }
 
             movementSpeed = 10;
@@ -172,27 +192,40 @@ namespace Rotpot.src.level.entities
             } 
             if (direction == 1)
             {
-                if (moving)
+                if (!dying)
                 {
-                    if (!jumping) batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
-                    else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+                    if (moving)
+                    {
+                        if (!jumping) batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+                        else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+                    }
+                    else
+                    {
+                        batch.Draw(level.resourceManager.images.GetImage("player"), position, idleAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+                    }
                 }
                 else
                 {
-                    batch.Draw(level.resourceManager.images.GetImage("player"), position, idleAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+                    batch.Draw(level.resourceManager.images.GetImage("player"), position, deathAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
                 }
-
             }
             else
             {
-                if (moving)
+                if (!dying)
                 {
-                    if (!jumping) batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
-                    else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
+                    if (moving)
+                    {
+                        if (!jumping) batch.Draw(level.resourceManager.images.GetImage("player"), position, runningAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
+                        else batch.Draw(level.resourceManager.images.GetImage("player"), position, jumpingAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
+                    }
+                    else
+                    {
+                        batch.Draw(level.resourceManager.images.GetImage("player"), position, idleAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
+                    }
                 }
                 else
                 {
-                    batch.Draw(level.resourceManager.images.GetImage("player"), position, idleAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
+                    batch.Draw(level.resourceManager.images.GetImage("player"), position, deathAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
                 }
             }
         }

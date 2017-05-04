@@ -17,7 +17,7 @@ namespace Svennebanan
         ResourceManager resources;
         public static Camera camera;
         private InputHandler input;
-        Level level;
+        public static Level level;
         MainMenu menu;
 
         public enum STATE

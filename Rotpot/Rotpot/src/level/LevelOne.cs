@@ -18,30 +18,16 @@ namespace Rotpot.src.level
 
         public LevelOne(ResourceManager resources) : base(resources)
         {
-            LoadLevel("Content/levels/Level1.txt");
-
-            entityManager.AddEntity(this, new EntityPlayer(new Vector2(2 * 128, 47 * 128)));
-            entityManager.AddEntity(this, new EntitySign(new Vector2(2 * 128, 47.5f * 128), 1));
-            entityManager.AddEntity(this, new EntityBox(new Vector2(226 * 128, 40 * 128)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
-            entityManager.AddEntity(this, new EntityMygga(new Vector2(-100, 2600)));
+            LoadLevel("Content/levels/Level3.txt");
 
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);
+            width = levelLoader.size.X * 128;
+            height = levelLoader.size.Y * 128;
             Reset();
         }
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
-
             if (--stickCooldown <= 0)
             {
                 if (GetPlayer().moving)
@@ -63,6 +49,7 @@ namespace Rotpot.src.level
                     stickCooldown = 50;
                 }
             }
+            base.Update(gameTime);
         }
 
     }

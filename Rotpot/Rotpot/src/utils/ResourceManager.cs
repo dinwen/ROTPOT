@@ -45,6 +45,7 @@ namespace Svennebanan
             images.AddImage("box", content.Load<Texture2D>("block"));
             images.AddImage("mygga 128x128", content.Load<Texture2D>("mygga 128x128"));
             images.AddImage("leaf", content.Load<Texture2D>("leaves64x64"));
+            images.AddImage("svamp tilesheet 160x96", content.Load<Texture2D>("svamp tilesheet 160x96"));
 
             images.AddImage("stick", content.Load<Texture2D>("stick"));
 
@@ -74,6 +75,9 @@ namespace Svennebanan
             tiles.AddTile(new Tile(3, 1, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(4, 1, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(5, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(1, 2, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(2, 2, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(3, 2, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(4, 2, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(5, 2, new Rectangle(0, 0, 128, 128), true));
         }

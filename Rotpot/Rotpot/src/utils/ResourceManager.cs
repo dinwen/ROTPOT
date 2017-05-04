@@ -23,10 +23,16 @@ namespace Svennebanan
 
         public void LoadContent(ContentManager content)
         {
+            images.AddImage("Play", content.Load<Texture2D>("PLAY"));
+            images.AddImage("Help", content.Load<Texture2D>("HELP"));
+            images.AddImage("Options", content.Load<Texture2D>("OPTIONS"));
+            images.AddImage("Quit", content.Load<Texture2D>("QUIT"));
+            images.AddImage("LongJumpSign", content.Load<Texture2D>("LONGJUMPSign"));
             images.AddImage("DashSign", content.Load<Texture2D>("DashSign"));
             images.AddImage("Sign", content.Load<Texture2D>("skylt 192x192"));
             images.AddImage("DoubleSign", content.Load<Texture2D>("DoubleSign"));
-            images.AddImage("WASDSign", content.Load<Texture2D>("WASDSign"));
+            images.AddImage("WADSign", content.Load<Texture2D>("WADSign"));
+            images.AddImage("WarningSign", content.Load<Texture2D>("WarningSign"));
             images.AddImage("tile_sheet", content.Load<Texture2D>("TILESHEET128X128"));
             images.AddImage("grass", content.Load<Texture2D>("grass"));
             images.AddImage("interface", content.Load<Texture2D>("interface"));

@@ -20,11 +20,6 @@ namespace Rotpot.src.level
         {
             LoadLevel("Content/levels/Level3.txt");
 
-            entityManager.AddEntity(this, new EntityPlayer(new Vector2(40 * 128, 87 * 128)));
-            entityManager.AddEntity(this, new EntityMushroom(new Vector2(63 * 128, 98.25f * 128)));
-            entityManager.AddEntity(this, new EntityMushroom(new Vector2(74 * 128, 88.25f * 128)));
-            entityManager.AddEntity(this, new EntityMushroom(new Vector2(85 * 128, 78.25f * 128)));
-
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);
             width = levelLoader.size.X * 128;
             height = levelLoader.size.Y * 128;

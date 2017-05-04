@@ -33,7 +33,26 @@ namespace Rotpot.src.level.entities
 
             if(player.GetDistance(position) <= 500 && signId == 1)
             {
-                batch.Draw(level.resourceManager.images.GetImage("WASDSign"), new Vector2(position.X, position.Y - 100), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.4f);
+                batch.Draw(level.resourceManager.images.GetImage("WADSign"), new Vector2(position.X - 300, position.Y - 400), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+            }
+            if (player.GetDistance(position) <= 500 && signId == 2)
+            {
+                batch.Draw(level.resourceManager.images.GetImage("DoubleSign"), new Vector2(position.X - 300, position.Y - 400), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+            }
+            if (player.GetDistance(position) <= 500 && signId == 3)
+            {
+                batch.Draw(level.resourceManager.images.GetImage("DashSign"), new Vector2(position.X - 300, position.Y - 400), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+
+            }
+            if (player.GetDistance(position) <= 500 && signId == 5)
+            {
+                batch.Draw(level.resourceManager.images.GetImage("WarningSign"), new Vector2(position.X - 300, position.Y - 400), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+
+            }
+            if (player.GetDistance(position) <= 500 && signId == 4)
+            {
+                batch.Draw(level.resourceManager.images.GetImage("LongJumpSign"), new Vector2(position.X - 300, position.Y - 400), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.5f);
+
             }
 
 

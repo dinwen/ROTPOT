@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Rotpot;
 using Rotpot.src.gui;
+using Rotpot.src.level;
 using Rotpot.src.level.entities;
 using Rotpot.src.utils;
 using Svennebanan.utils;
@@ -55,9 +56,24 @@ namespace Svennebanan
             }
         }
 
-        public void ChangeLevel(Level level)
+        public void ChangeLevel(int levelID)
         {
-            Main.level = level;
+            if (levelID == 1)
+            {
+                Main.level = new LevelOne(resourceManager);
+            }
+            else if (levelID == 2)
+            {
+                Main.level = new LevelTwo(resourceManager);
+            }
+            else if (levelID == 3)
+            {
+                Main.level = new LevelThree(resourceManager);
+            }
+            if (levelID == 4)
+            {
+                Main.level = new LevelFour(resourceManager);
+            }
         }
 
         public void LoadLevel(string levelPath)

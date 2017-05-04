@@ -161,7 +161,7 @@ namespace Rotpot.src.level.entities
             else if (position.X > level.width - width)
             {
                 level.ClearLevel();
-                level.ChangeLevel(new LevelOne(level.resourceManager));
+                level.ChangeLevel(++Main.currentLevelID);
                 return;
             }
 

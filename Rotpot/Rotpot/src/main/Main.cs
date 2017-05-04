@@ -17,7 +17,10 @@ namespace Svennebanan
         ResourceManager resources;
         public static Camera camera;
         private InputHandler input;
+
         public static Level level;
+        public static int currentLevelID = 1;
+
         MainMenu menu;
 
         public enum STATE
@@ -44,7 +47,7 @@ namespace Svennebanan
             camera = new Camera(GraphicsDevice.Viewport);
             camera.Zoom = 1f;
             input = new InputHandler();
-            level = new LevelOne(resources);
+            level = new LevelFour(resources);
 
             menu = new MainMenu(resources, new Vector2(), level);
         }

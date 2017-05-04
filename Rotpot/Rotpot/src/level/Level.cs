@@ -13,6 +13,7 @@ namespace Svennebanan
     public class Level
     {
 
+        public float width, height;
         protected LevelLoader levelLoader;
         public HUD hud;
 
@@ -40,9 +41,28 @@ namespace Svennebanan
             creationManager = new CreationManager(this);
         }
 
+        public void ClearLevel()
+        {
+            Entity stepper = Entity.firstEntity;
+            if (stepper != null)
+            {
+                stepper.Remove();
+                while (stepper.nextEntity != null)
+                {
+                    stepper = stepper.nextEntity;
+                    stepper.Remove();
+                }
+            }
+        }
+
+        public void ChangeLevel(Level level)
+        {
+            Main.level = level;
+        }
+
         public void LoadLevel(string levelPath)
         {
-            levelLoader = new LevelLoader(resourceManager, "Content/levels/level2.txt");
+            levelLoader = new LevelLoader(resourceManager, levelPath);
             tiles = levelLoader.GetLevelTiles();
             Reset();
         }
@@ -86,12 +106,17 @@ namespace Svennebanan
 
             entityManager.Draw(batch);
 
-            foreach (Tile t in tiles)
+            EntityPlayer player = GetPlayer();
+            if (player != null)
             {
-                batch.Draw(resourceManager.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.1f);
-            }
+                foreach (Tile t in tiles)
+                {
+                    float dir = player.GetDistance(t.position);
+                    if (dir < 1920) batch.Draw(resourceManager.images.GetImage("tile_sheet"), t.position, t.texturePosition, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.1f);
+                }
 
-            hud.Draw(batch);
+                hud.Draw(batch);
+            }
         }
 
     }

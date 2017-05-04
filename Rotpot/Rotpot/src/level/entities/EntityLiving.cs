@@ -120,7 +120,7 @@ namespace Rotpot.src.level.entities
             while (stepper.nextEntity != null)
             {
                 stepper = stepper.nextEntity;
-                if (this != stepper && GetDistance(stepper.GetPosition()) < 40)
+                if (stepper is EntityLiving && this != stepper && GetDistance(stepper.GetPosition()) < 40)
                 {
                     float direction = GetDirection(stepper.GetPosition());
                     stepper.SetPosition(stepper.GetPosition() + new Vector2((float)Math.Cos(direction), (float)Math.Sin(direction)));

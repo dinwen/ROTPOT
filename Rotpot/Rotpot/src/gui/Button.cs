@@ -15,24 +15,30 @@ namespace Svennebanan.gui
         public bool trigger;
         private Vector2 position;
         private int width, height;
-        private int textureID;
+        private string textureID;
         private Main main;
+        private Level level;
+        
 
 
-        public Button(Vector2 position, int width, int height, int textureID, Main main)
+        public Button(Vector2 position, int width, int height, string textureID, Level level)
         {
+            this.level = level;
             this.position = position;
             this.width = width;
             this.height = height;
-            this.main = main;
+            
             this.textureID = textureID;
         }
 
         public void Update()
         {
-            if ((Mouse.GetState().X / 2 >= position.X && Mouse.GetState().X / 2 <= position.X + width) && (Mouse.GetState().Y / 2 >= position.Y && Mouse.GetState().Y / 2 <= position.Y + height))
+            
+            if ((Mouse.GetState().X >= position.X && Mouse.GetState().X <= position.X + width) && (Mouse.GetState().Y >= position.Y && Mouse.GetState().Y <= position.Y + height))
             {
-                if(Mouse.GetState().LeftButton == ButtonState.Pressed)
+                
+
+                if (Mouse.GetState().LeftButton == ButtonState.Pressed)
                 {
                     trigger = true;
                 }
@@ -50,7 +56,7 @@ namespace Svennebanan.gui
 
         public void Draw(SpriteBatch batch)
         {
-            //batch.Draw(main.images.GetImage(textureID), position, Color.White);
+            batch.Draw(level.resourceManager.images.GetImage(textureID), position, Color.White);
         }
     }
 }

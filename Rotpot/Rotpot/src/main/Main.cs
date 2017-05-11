@@ -47,7 +47,7 @@ namespace Svennebanan
             camera = new Camera(GraphicsDevice.Viewport);
             camera.Zoom = 1f;
             input = new InputHandler();
-            level = new LevelFour(resources);
+            level = new LevelOne(resources);
 
             menu = new MainMenu(resources, new Vector2(), level);
         }
@@ -104,20 +104,6 @@ namespace Svennebanan
             else if(state == STATE.Menu)
             {
                 menu.Draw(spriteBatch);
-            }
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape) && Main.state == Main.STATE.Game)
-            {
-
-
-                if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
-                    Main.state = Main.STATE.Menu;
-                }
-
-                if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
-
-                }
             }
 
             spriteBatch.End();

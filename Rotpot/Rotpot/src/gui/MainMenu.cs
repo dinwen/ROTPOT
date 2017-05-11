@@ -47,7 +47,6 @@ namespace Rotpot.src.gui
 
             if (start.trigger)
             {
-                Console.WriteLine("Brah");
                 Main.state = Main.STATE.Game;
                 
             }

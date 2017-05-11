@@ -46,6 +46,7 @@ namespace Svennebanan
             images.AddImage("mygga 128x128", content.Load<Texture2D>("mygga 128x128"));
             images.AddImage("leaf", content.Load<Texture2D>("leaves64x64"));
             images.AddImage("svamp tilesheet 160x96", content.Load<Texture2D>("svamp tilesheet 160x96"));
+            images.AddImage("summoner", content.Load<Texture2D>("summoner"));
             images.AddImage("ExitSign", content.Load<Texture2D>("ExitSign"));
             images.AddImage("gem", content.Load<Texture2D>("gem"));
 

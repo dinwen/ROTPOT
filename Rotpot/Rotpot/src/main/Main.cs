@@ -49,7 +49,7 @@ namespace Svennebanan
             camera = new Camera(GraphicsDevice.Viewport);
             camera.Zoom = 1f;
             input = new InputHandler();
-            level = new LevelFour(resources);
+            level = new LevelOne(resources);
 
             menu = new MainMenu(resources, new Vector2(), level);
         }
@@ -103,6 +103,7 @@ namespace Svennebanan
                 spriteBatch.Begin();
                 menu.Draw(spriteBatch);
             }
+
             spriteBatch.End();
 
             base.Draw(gameTime);

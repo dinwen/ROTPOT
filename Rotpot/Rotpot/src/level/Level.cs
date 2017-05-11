@@ -70,10 +70,15 @@ namespace Svennebanan
             {
                 Main.level = new LevelThree(resourceManager);
             }
-            if (levelID == 4)
+            else if (levelID == 4)
             {
                 Main.level = new LevelFour(resourceManager);
             }
+            else if (levelID == 5)
+            {
+                Main.level = new LevelFive(resourceManager);
+            }
+
         }
 
         public void LoadLevel(string levelPath)

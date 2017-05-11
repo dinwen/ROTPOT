@@ -67,6 +67,7 @@ namespace Rotpot.src.level.entities
             if (onSolidEntity)
             {
                 onSolidEntity = false;
+                position.Y -= movementSpeed;
                 return true;
             }
             foreach (Tile t in level.tiles)

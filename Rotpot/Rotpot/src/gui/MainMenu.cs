@@ -49,7 +49,7 @@ namespace Rotpot.src.gui
             {
                 Console.WriteLine("Brah");
                 Main.state = Main.STATE.Game;
-                
+                start.trigger = false;
             }
 
            

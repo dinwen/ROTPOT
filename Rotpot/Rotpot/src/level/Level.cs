@@ -106,6 +106,7 @@ namespace Svennebanan
             background2 = new Vector2((int)((Main.camera.Position.X) / 1920 + 1) * 1920, Main.camera.Position.Y);
             background3 = new Vector2((int)((Main.camera.Position.X * 1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5), Main.camera.Position.Y);
             background4 = new Vector2((int)((Main.camera.Position.X * 1.2f) / 1920) * 1920 - (Main.camera.Position.X / 5) + 1920, Main.camera.Position.Y);
+            hud.Update(gameTime);
         }
 
         public EntityPlayer GetPlayer()

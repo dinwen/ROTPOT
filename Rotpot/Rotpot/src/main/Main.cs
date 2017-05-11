@@ -21,6 +21,8 @@ namespace Svennebanan
         public static Level level;
         public static int currentLevelID = 1;
 
+        public static int score;
+
         MainMenu menu;
 
         public enum STATE
@@ -65,10 +67,6 @@ namespace Svennebanan
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            {
-                
-            }
 
 
             if (state == STATE.Quit)
@@ -86,7 +84,6 @@ namespace Svennebanan
                 menu.Update();
             }
 
-            
 
 
             base.Update(gameTime);
@@ -96,30 +93,16 @@ namespace Svennebanan
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.FrontToBack);
             if (state == STATE.Game)
             {
+                spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.FrontToBack);
                 level.Draw(spriteBatch);
             }
-            else if(state == STATE.Menu)
+            else if (state == STATE.Menu)
             {
+                spriteBatch.Begin();
                 menu.Draw(spriteBatch);
             }
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape) && Main.state == Main.STATE.Game)
-            {
-
-
-                if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
-                    Main.state = Main.STATE.Menu;
-                }
-
-                if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
-
-                }
-            }
-
             spriteBatch.End();
 
             base.Draw(gameTime);

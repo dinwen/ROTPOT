@@ -22,6 +22,8 @@ namespace Rotpot.src.level
             entityManager.AddEntity(this, new EntityMushroom(new Vector2(128 * 57, 128 * 71.25f)));
             entityManager.AddEntity(this, new EntitySummoner(new Vector2(128 * 260, 128 * 60f)));
             entityManager.AddEntity(this, new EntitySign(new Vector2(128 * 20, 128 * 69.5f), 5));
+            entityManager.AddEntity(this, new EntityBox(new Vector2(128 * 260, 128 * 64f)));
+            entityManager.AddEntity(this, new EntityCoin(new Vector2(2, 68), 1, 50));
 
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);
             width = levelLoader.size.X * 128;

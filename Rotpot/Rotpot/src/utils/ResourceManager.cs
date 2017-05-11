@@ -11,7 +11,7 @@ namespace Svennebanan
 {
     public class ResourceManager
     {
-
+        public static SpriteFont font;
         public ImageHandler images;
         public TileHandler tiles;
 
@@ -47,6 +47,8 @@ namespace Svennebanan
             images.AddImage("leaf", content.Load<Texture2D>("leaves64x64"));
             images.AddImage("svamp tilesheet 160x96", content.Load<Texture2D>("svamp tilesheet 160x96"));
             images.AddImage("summoner", content.Load<Texture2D>("summoner"));
+            images.AddImage("ExitSign", content.Load<Texture2D>("ExitSign"));
+            images.AddImage("gem", content.Load<Texture2D>("gem"));
 
             images.AddImage("stick", content.Load<Texture2D>("stick"));
 
@@ -81,6 +83,8 @@ namespace Svennebanan
             tiles.AddTile(new Tile(3, 2, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(4, 2, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(5, 2, new Rectangle(0, 0, 128, 128), true));
+
+            font = content.Load<SpriteFont>("Score");
         }
 
     }

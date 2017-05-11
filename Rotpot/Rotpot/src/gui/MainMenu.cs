@@ -48,7 +48,7 @@ namespace Rotpot.src.gui
             if (start.trigger)
             {
                 Main.state = Main.STATE.Game;
-                
+                start.trigger = false;
             }
 
            

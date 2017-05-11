@@ -42,6 +42,7 @@
     <Compile Include="src\gui\HUD.cs" />
     <Compile Include="src\gui\MainMenu.cs" />
     <Compile Include="src\level\entities\Entity.cs" />
+    <Compile Include="src\level\entities\EntityCoin.cs" />
     <Compile Include="src\level\entities\EntityLiving.cs" />
     <Compile Include="src\level\entities\EntityMushroom.cs" />
     <Compile Include="src\level\entities\EntityMygga.cs" />

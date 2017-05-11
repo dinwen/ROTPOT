@@ -481,7 +481,6 @@
 /processorParam:TextureFormat=Color
 /build:TILESHEET128X128.png
 
-#begin summoner.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -491,5 +490,4 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:summoner.png
 

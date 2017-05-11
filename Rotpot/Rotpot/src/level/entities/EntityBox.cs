@@ -22,7 +22,7 @@ namespace Rotpot.src.level.entities
             this.position = position;
             this.width = 434;
             this.height = 372;
-            this.movementSpeed = 5;
+            this.movementSpeed = 2;
         }
 
         public override void Update(GameTime gameTime)

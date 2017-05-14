@@ -10,9 +10,11 @@ namespace Rotpot.src.level.entities
 {
     class ParticleStar:EntityParticle
     {
-        public ParticleStar(Vector2 Position)
+
+        public ParticleStar(Vector2 Position, Color color)
         {
             position = Position;
+            this.color = color;
 
             duration = rdn.Next(60, 80);
 
@@ -32,7 +34,7 @@ namespace Rotpot.src.level.entities
         {
             //batch.Draw(level.resourceManager.images.GetImage("star"), position, new Color(Color.White, duration / 60f));
 
-            batch.Draw(level.resourceManager.images.GetImage("star"), position, null, new Color(Color.White, duration / 60f), 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.05f);
+            batch.Draw(level.resourceManager.images.GetImage("star"), position, null, new Color(color, duration / 60f), 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.05f);
         }
     }
 }

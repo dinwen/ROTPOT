@@ -58,7 +58,7 @@ namespace Svennebanan
             //images.AddImage("help", content.Load<Texture2D>("HELP"));
 
             //particles
-            images.AddImage("star", content.Load<Texture2D>("star"));
+            images.AddImage("star", content.Load<Texture2D>("particle 16x16"));
             images.AddImage("diamond", content.Load<Texture2D>("diamond"));
             images.AddImage("circle", content.Load<Texture2D>("circle"));
             images.AddImage("circle1", content.Load<Texture2D>("circle1"));

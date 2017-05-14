@@ -154,26 +154,4 @@ C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\mygga 128x128.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\stick.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level.txt
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level1.txt
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level3.txt
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level4.txt
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level5.txt
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\ExitSign.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\gem.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\HELP.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\leaves64x64.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\OPTIONS.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\PLAY.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\QUIT.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\Score.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\skylt 192x192.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\summoner.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\svamp tilesheet 160x96.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\WASDSign.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\DashSign.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\DoubleSign.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\JumpSign.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\LONGJUMPsign.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\WADSign.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\WarningSign.xnb
-C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\particle 16x16.xnb
+

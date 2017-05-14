@@ -21,6 +21,8 @@ namespace Rotpot.src.level.entities
         public bool moving = false;
         private bool dying = false;
 
+        float movingSoundCooldown = 15;
+
         private int dashCooldown = 10;
         private int dashDirection = 0;
         private float dashAlpha = 0;
@@ -83,6 +85,7 @@ namespace Rotpot.src.level.entities
                 {
                     if (strength >= 100)
                     {
+                        level.resourceManager.audio.GetSound(10).Play(1f, 0, 0);
                         velocity.Y = -23f;
                         strength = 0;
                         InputHandler.releaseJump = true;
@@ -92,11 +95,20 @@ namespace Rotpot.src.level.entities
             }
             else
             {
+                if (jumping)
+                {
+                    level.resourceManager.audio.GetSound(9).Play(0.2f, 0, 0);
+                }
                 jumping = false;
                 jumpingAnim.Reset();
-                if (velocity.Y > 0) velocity.Y = 0f;
+                if (velocity.Y > 0)
+                {
+                    
+                    velocity.Y = 0f;
+                }
                 if (InputHandler.attack)
                 {
+                    level.resourceManager.audio.GetSound(10).Play(0.2f, 0, 0);
                     InputHandler.releaseJump = true;
                     InputHandler.attack = false;
                     velocity.Y = -23;
@@ -119,7 +131,10 @@ namespace Rotpot.src.level.entities
             if (movement != Vector2.Zero)
             {
                 moving = true;
-                if (!jumping) level.entityManager.AddEntity(level, new ParticleDust(new Vector2(position.X + width / 2, position.Y + height), new Vector2(direction * 3, -1.5f), 0.3f));
+                if (!jumping)
+                {
+                    level.entityManager.AddEntity(level, new ParticleDust(new Vector2(position.X + width / 2, position.Y + height), new Vector2(direction * 3, -1.5f), 0.3f));
+                }
 
                 if (movement.X > 0) direction = 1;
                 else direction = -1;
@@ -142,6 +157,8 @@ namespace Rotpot.src.level.entities
                         CheckCollision();
                     }
                     movement = Vector2.Zero;
+
+                    level.resourceManager.audio.GetSound(8).Play();
                 }
             }
             else
@@ -167,9 +184,13 @@ namespace Rotpot.src.level.entities
 
             CheckCollision();
 
+            PlaySound();
+            
+
             if (health <= 0)
             {
                 dying = true;
+                level.resourceManager.audio.GetSound(11).Play(0.1f, 0, 0);
             }
 
             if(dying)
@@ -177,6 +198,7 @@ namespace Rotpot.src.level.entities
                 deathAnim.Update();
                 if (deathAnim.hasEnded)
                 {
+                    
                     this.Respawn();
                 }
             }
@@ -226,6 +248,18 @@ namespace Rotpot.src.level.entities
                 else
                 {
                     batch.Draw(level.resourceManager.images.GetImage("player"), position, deathAnim.GetRectangle(), Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0.5f);
+                }
+            }
+        }
+        
+        public void PlaySound()
+        {
+            if (--movingSoundCooldown <= 0 && OnGround())
+            {
+                if (moving)
+                {
+                        movingSoundCooldown = 39f;
+                        level.resourceManager.audio.GetSound(7).Play(1f, 0, 0);
                 }
             }
         }

@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Rotpot;
 using Rotpot.src.gui;
@@ -15,6 +17,7 @@ namespace Svennebanan
     {
 
         public float width, height;
+      
         protected LevelLoader levelLoader;
         public HUD hud;
 

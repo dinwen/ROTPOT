@@ -4,49 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/tiles.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/grass.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/healthbar.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/powerbar.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/interface.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/gris.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/player.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/Background.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/Trees.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/diamond.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/star.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circle.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/block.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circle1.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circlebig1.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circle2.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circle3.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/circlebig.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/smoke.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/HELP.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/menu background.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/OPTIONS.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/PLAY.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/menu/QUIT.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/mygga 128x128.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/stick.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/leaves64x64.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/OPTIONS.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/PLAY.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/QUIT.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/skylt 192x192.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/WADSign.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/WarningSign.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/DashSign.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/DoubleSign.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/HELP.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/JumpSign.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/LONGJUMPsign.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/TILESHEET128X128.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/summoner.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/gem.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/ExitSign.png</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/Score.spritefont</File>
-    <File>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/particle 16x16.png</File>
+
   </SourceFiles>
 </SourceFileCollection>

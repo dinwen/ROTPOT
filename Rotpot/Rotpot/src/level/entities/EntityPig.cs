@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,9 +15,15 @@ namespace Rotpot.src.level.entities
 {
     public class EntityPig : EntityLiving
     {
+
         public float patrolSpeed;
         private Animation animation;
         public Rectangle agroRange;
+
+        int movementSoundCooldown = 0;
+        int dmgSoundCooldown = 0;
+
+        int dmgcooldown = 0;
 
         private int direction = 0;
 
@@ -44,6 +52,8 @@ namespace Rotpot.src.level.entities
 
         public override void Update(GameTime gameTime)
         {
+            //level.resourceManager.audio.GetSound(4).Play();
+
             if (!OnGround())
             {
                 velocity.Y += GRAVITY;
@@ -58,6 +68,7 @@ namespace Rotpot.src.level.entities
                 pigAlert();
                 animation.Update();
             }
+            
             else
             {
                 position += new Vector2(-patrolSpeed, 0);
@@ -65,15 +76,21 @@ namespace Rotpot.src.level.entities
 
             if (GetDistance(level.GetPlayer().GetPosition()) < 120)
             {
-                level.GetPlayer().Damage(1);
+                if (--dmgcooldown <= 0)
+                {
+                    dmgcooldown = 40;
+                    level.GetPlayer().Damage(20);
+                }
             }
 
             if(level.GetPlayer().GetBoundsInGround().Intersects(this.GetBoundsFull()) && level.GetPlayer().GetVelocity().Y > 0)
             {
                 level.GetPlayer().SetVelocity(new Vector2(level.GetPlayer().GetVelocity().X, -10));
                 Remove();
+                level.resourceManager.audio.GetSound(6).Play(0.5f, 0, 0);
             }
 
+            PlaySound();
             position += velocity;
             CheckCollision();
         }
@@ -90,6 +107,25 @@ namespace Rotpot.src.level.entities
             {
                 position += new Vector2(movementSpeed, 0);
                 direction = +0;
+            }
+        }
+        public void PlaySound()
+        {
+            if (GetDistance(level.GetPlayer().GetPosition()) < 1000)
+            {
+                if (--movementSoundCooldown <= 0)
+                {
+                    movementSoundCooldown = 33;
+                    level.resourceManager.audio.GetSound(4).Play(0.5f, 0, 0);
+                }
+            }
+            if (GetDistance(level.GetPlayer().GetPosition()) < 120)
+            {
+                if (--dmgSoundCooldown <= 0)
+                {
+                    dmgSoundCooldown = 40;
+                    level.resourceManager.audio.GetSound(5).Play();
+                }
             }
         }
     }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Rotpot.src.gui;
 using Rotpot.src.level.entities;
-using Rotpot.src.utils;
 using Svennebanan;
 using System;
 using System.Collections.Generic;
@@ -11,19 +9,24 @@ using System.Threading.Tasks;
 
 namespace Rotpot.src.level
 {
-    class LevelOne : Level
+    class LevelFive : Level
     {
 
-        int stickCooldown = 60;
-
-        public LevelOne(ResourceManager resources) : base(resources)
+        public LevelFive(ResourceManager resources) : base(resources)
         {
-            LoadLevel("Content/levels/Level1.txt");
+            LoadLevel("Content/levels/Level5.txt");
 
-            entityManager.AddEntity(this, new EntityPlayer(new Vector2(128 * 4, 128 * 47)));
-            entityManager.AddEntity(this, new EntitySign(new Vector2(128 * 6, 128 * 47.5f), 1));
-            entityManager.AddEntity(this, new EntityCoin(new Vector2(102, 46), 1, 50));
-            entityManager.AddEntity(this, new EntityCoin(new Vector2(54, 46), 1, 50));
+            entityManager.AddEntity(this, new EntityPlayer(new Vector2(128 * 2, 128 * 68.0f)));
+            entityManager.AddEntity(this, new EntityMushroom(new Vector2(128 * 26, 128 * 73.25f)));
+            entityManager.AddEntity(this, new EntityBox(new Vector2(128 * 272, 128 * 64)));
+            entityManager.AddEntity(this, new EntitySummoner(new Vector2(128 * 239, 128 * 64)));
+            entityManager.AddEntity(this, new EntitySign(new Vector2(128 * 216, 128 * 63.5f), 5));
+            entityManager.AddEntity(this, new EntityCoin(new Vector2(27, 61), 1, 50));
+            entityManager.AddEntity(this, new EntityCoin(new Vector2(51, 56), 1, 50));
+            entityManager.AddEntity(this, new EntityCoin(new Vector2(75, 64), 1, 50));
+            entityManager.AddEntity(this, new EntityCoin(new Vector2(93, 57), 1, 50));
+            entityManager.AddEntity(this, new EntityCoin(new Vector2(169, 59), 1, 50));
+            entityManager.AddEntity(this, new EntityCoin(new Vector2(224, 70), 1, 50));
 
 
             Main.camera.SetLevelSize(levelLoader.size.X * 128, levelLoader.size.Y * 128);
@@ -34,7 +37,7 @@ namespace Rotpot.src.level
 
         public override void Update(GameTime gameTime)
         {
-            //if (--stickCooldown <= 0)
+            //if (GetPlayer().GetPosition().X > 128 * 25 && --stickCooldown <= 0)
             //{
             //    if (GetPlayer().moving)
             //    {

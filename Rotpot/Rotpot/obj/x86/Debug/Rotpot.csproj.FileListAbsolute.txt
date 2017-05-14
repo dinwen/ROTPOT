@@ -154,24 +154,4 @@ C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\mygga 128x128.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\stick.xnb
 C:\Users\jonathan.runeke\Documents\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level.txt
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\mygga 128x128.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\levels\Level.txt
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\buzzing.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\myggadmg.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\myggadmg1.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\myggadmg2.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pigdie.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pigdmg1.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pigmovement.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\particle 16x16.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pigmovementshort.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\buzzingshort.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\flytest.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\flytest1.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pindash.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pinlanding2.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pinjump.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\fly.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pinmovement.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pindeath.xnb
-C:\Users\trungkin.le\Documents\GitHub\ROTPOT\Rotpot\Rotpot\bin\Windows\x86\Debug\Content\pindeath1.xnb
+

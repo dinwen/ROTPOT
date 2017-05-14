@@ -42,21 +42,29 @@
     <Compile Include="src\gui\HUD.cs" />
     <Compile Include="src\gui\MainMenu.cs" />
     <Compile Include="src\level\entities\Entity.cs" />
+    <Compile Include="src\level\entities\EntityCoin.cs" />
     <Compile Include="src\level\entities\EntityLiving.cs" />
     <Compile Include="src\level\entities\EntityMushroom.cs" />
     <Compile Include="src\level\entities\EntityMygga.cs" />
     <Compile Include="src\level\entities\EntityParticle.cs" />
     <Compile Include="src\level\entities\EntityPig.cs" />
     <Compile Include="src\level\entities\EntityPlayer.cs" />
+    <Compile Include="src\level\entities\EntitySign.cs" />
     <Compile Include="src\level\entities\EntityStick.cs" />
+    <Compile Include="src\level\entities\EntitySummoner.cs" />
     <Compile Include="src\level\entities\EntityTest.cs" />
     <Compile Include="src\level\entities\EntityBox.cs" />
     <Compile Include="src\level\entities\ParticleBackground.cs" />
     <Compile Include="src\level\entities\ParticleBackgroundBig.cs" />
     <Compile Include="src\level\entities\ParticleDust.cs" />
+    <Compile Include="src\level\entities\ParticleLeaf.cs" />
     <Compile Include="src\level\entities\ParticleStar.cs" />
     <Compile Include="src\level\Level.cs" />
+    <Compile Include="src\level\LevelFive.cs" />
+    <Compile Include="src\level\LevelFour.cs" />
     <Compile Include="src\level\LevelOne.cs" />
+    <Compile Include="src\level\LevelThree.cs" />
+    <Compile Include="src\level\LevelTwo.cs" />
     <Compile Include="src\level\Tile.cs" />
     <Compile Include="src\main\Main.cs" />
     <Compile Include="src\main\Program.cs" />
@@ -89,10 +97,22 @@
     <Content Include="Content\levels\Level.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\levels\Level1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\levels\Level11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\levels\Level2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\levels\Level3.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\levels\Level4.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\levels\Level5.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\levels\test.txt">

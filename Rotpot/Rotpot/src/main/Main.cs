@@ -17,15 +17,20 @@ namespace Svennebanan
         ResourceManager resources;
         public static Camera camera;
         private InputHandler input;
-        Level level;
+
+        public static Level level;
+        public static int currentLevelID = 1;
+
+        public static int score;
+
         MainMenu menu;
 
         public enum STATE
         {
-            Game, Menu
+            Game, Menu, Quit
         };
 
-        public static STATE state = STATE.Game;
+        public static STATE state = STATE.Menu;
 
         public Main()
         {
@@ -33,6 +38,7 @@ namespace Svennebanan
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
+            IsMouseVisible = true;
             Content.RootDirectory = "Content";
         }
 
@@ -45,7 +51,7 @@ namespace Svennebanan
             input = new InputHandler();
             level = new LevelOne(resources);
 
-            menu = new MainMenu(resources);
+            menu = new MainMenu(resources, new Vector2(), level);
         }
 
         protected override void LoadContent()
@@ -61,8 +67,12 @@ namespace Svennebanan
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+
+
+            if (state == STATE.Quit)
+            {
                 Exit();
+            }
 
             if (state == STATE.Game)
             {
@@ -74,7 +84,6 @@ namespace Svennebanan
                 menu.Update();
             }
 
-            
 
 
             base.Update(gameTime);
@@ -84,15 +93,17 @@ namespace Svennebanan
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.FrontToBack);
             if (state == STATE.Game)
             {
+                spriteBatch.Begin(transformMatrix: camera.GetViewMatrix(), blendState: BlendState.NonPremultiplied, samplerState: SamplerState.PointClamp, depthStencilState: null, rasterizerState: null, effect: null, sortMode: SpriteSortMode.FrontToBack);
                 level.Draw(spriteBatch);
             }
-            else if(state == STATE.Menu)
+            else if (state == STATE.Menu)
             {
+                spriteBatch.Begin();
                 menu.Draw(spriteBatch);
             }
+
             spriteBatch.End();
 
             base.Draw(gameTime);

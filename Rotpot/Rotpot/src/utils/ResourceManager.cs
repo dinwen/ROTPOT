@@ -13,7 +13,7 @@ namespace Svennebanan
 {
     public class ResourceManager
     {
-
+        public static SpriteFont font;
         public ImageHandler images;
         public TileHandler tiles;
         public AudioHandler audio;
@@ -27,6 +27,16 @@ namespace Svennebanan
 
         public void LoadContent(ContentManager content)
         {
+            images.AddImage("Play", content.Load<Texture2D>("PLAY"));
+            images.AddImage("Help", content.Load<Texture2D>("HELP"));
+            images.AddImage("Options", content.Load<Texture2D>("OPTIONS"));
+            images.AddImage("Quit", content.Load<Texture2D>("QUIT"));
+            images.AddImage("LongJumpSign", content.Load<Texture2D>("LONGJUMPSign"));
+            images.AddImage("DashSign", content.Load<Texture2D>("DashSign"));
+            images.AddImage("Sign", content.Load<Texture2D>("skylt 192x192"));
+            images.AddImage("DoubleSign", content.Load<Texture2D>("DoubleSign"));
+            images.AddImage("WADSign", content.Load<Texture2D>("WADSign"));
+            images.AddImage("WarningSign", content.Load<Texture2D>("WarningSign"));
             images.AddImage("tile_sheet", content.Load<Texture2D>("TILESHEET128X128"));
             images.AddImage("grass", content.Load<Texture2D>("grass"));
             images.AddImage("interface", content.Load<Texture2D>("interface"));
@@ -38,6 +48,11 @@ namespace Svennebanan
             images.AddImage("trees", content.Load<Texture2D>("Trees"));
             images.AddImage("box", content.Load<Texture2D>("block"));
             images.AddImage("mygga 128x128", content.Load<Texture2D>("mygga 128x128"));
+            images.AddImage("leaf", content.Load<Texture2D>("leaves64x64"));
+            images.AddImage("svamp tilesheet 160x96", content.Load<Texture2D>("svamp tilesheet 160x96"));
+            images.AddImage("summoner", content.Load<Texture2D>("summoner"));
+            images.AddImage("ExitSign", content.Load<Texture2D>("ExitSign"));
+            images.AddImage("gem", content.Load<Texture2D>("gem"));
 
             images.AddImage("stick", content.Load<Texture2D>("stick"));
 
@@ -47,7 +62,7 @@ namespace Svennebanan
             //images.AddImage("help", content.Load<Texture2D>("HELP"));
 
             //particles
-            images.AddImage("star", content.Load<Texture2D>("star"));
+            images.AddImage("star", content.Load<Texture2D>("particle 16x16"));
             images.AddImage("diamond", content.Load<Texture2D>("diamond"));
             images.AddImage("circle", content.Load<Texture2D>("circle"));
             images.AddImage("circle1", content.Load<Texture2D>("circle1"));
@@ -69,6 +84,9 @@ namespace Svennebanan
             tiles.AddTile(new Tile(3, 1, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(4, 1, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(5, 1, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(1, 2, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(2, 2, new Rectangle(0, 0, 128, 128), true));
+            tiles.AddTile(new Tile(3, 2, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(4, 2, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(5, 2, new Rectangle(0, 0, 128, 128), true));
 
@@ -86,6 +104,7 @@ namespace Svennebanan
             audio.AddAudio(10, content.Load<SoundEffect>("pinjump"));
             audio.AddAudio(11, content.Load<SoundEffect>("pindeath"));
 
+            font = content.Load<SpriteFont>("Score");
         }
 
     }

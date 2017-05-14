@@ -21,7 +21,6 @@ namespace Rotpot.src.level.entities
         protected Vector2 velocity;
         protected const float GRAVITY = 0.82f;
 
-
         public EntityLiving()
         {
 
@@ -68,6 +67,7 @@ namespace Rotpot.src.level.entities
             if (onSolidEntity)
             {
                 onSolidEntity = false;
+                position.Y -= movementSpeed;
                 return true;
             }
             foreach (Tile t in level.tiles)
@@ -86,7 +86,7 @@ namespace Rotpot.src.level.entities
         }
 
         public bool CheckCollision()
-        {
+        { 
             Entity stepper = Entity.firstEntity;
             if (this != stepper && GetDistance(stepper.GetPosition()) < 40)
             {
@@ -96,7 +96,7 @@ namespace Rotpot.src.level.entities
             while (stepper.nextEntity != null)
             {
                 stepper = stepper.nextEntity;
-                if (this != stepper && GetDistance(stepper.GetPosition()) < 40)
+                if (stepper is EntityLiving && this != stepper && GetDistance(stepper.GetPosition()) < 40)
                 {
                     float direction = GetDirection(stepper.GetPosition());
                     stepper.SetPosition(stepper.GetPosition() + new Vector2((float)Math.Cos(direction), (float)Math.Sin(direction)));
@@ -105,26 +105,29 @@ namespace Rotpot.src.level.entities
 
             foreach (Tile t in level.tiles)
             {
-                if (GetBoundsTop().Intersects(t.GetBounds()))
+                if (GetDistance(t.position) < 400)
                 {
-                    position.Y = t.position.Y + t.collision.Height;
-                    velocity.Y = 1;
-                    return true;
-                }
-                if (GetBoundsBottom().Intersects(t.GetBounds()))
-                {
-                    position.Y = t.position.Y - height + t.offset.Y;
-                    return true;
-                }
-                if (GetBoundsLeft().Intersects(t.GetBounds()))
-                {
-                    position.X = t.position.X + t.collision.Height;
-                    return true;
-                }
-                if (GetBoundsRight().Intersects(t.GetBounds()))
-                {
-                    position.X = t.position.X - width + t.offset.X;
-                    return true;
+                    if (GetBoundsTop().Intersects(t.GetBounds()))
+                    {
+                        position.Y = t.position.Y + t.collision.Height;
+                        velocity.Y = 1;
+                        return true;
+                    }
+                    if (GetBoundsBottom().Intersects(t.GetBounds()))
+                    {
+                        position.Y = t.position.Y - height + t.offset.Y;
+                        return true;
+                    }
+                    if (GetBoundsLeft().Intersects(t.GetBounds()))
+                    {
+                        position.X = t.position.X + t.collision.Height;
+                        return true;
+                    }
+                    if (GetBoundsRight().Intersects(t.GetBounds()))
+                    {
+                        position.X = t.position.X - width + t.offset.X;
+                        return true;
+                    }
                 }
             }
             return false;
@@ -139,32 +142,32 @@ namespace Rotpot.src.level.entities
 
         public Rectangle GetBoundsInGround()
         {
-            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height, width - (int)movementSpeed * 2, (int)movementSpeed * 2);
+            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height, width - (int)movementSpeed * 3, (int)movementSpeed * 3);
         }
 
         public Rectangle GetBoundsW()
         {
-            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height, width - (int)movementSpeed * 2, (int)movementSpeed * 2);
+            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height, width - (int)movementSpeed * 3, (int)movementSpeed * 3);
         }
 
         public Rectangle GetBoundsBottom()
         {
-            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height - (int)movementSpeed, width - (int)movementSpeed * 2, (int)movementSpeed);
+            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y + height - (int)movementSpeed, width - (int)movementSpeed * 3, (int)movementSpeed);
         }
 
         public Rectangle GetBoundsTop()
         {
-            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y, width - (int)movementSpeed * 2, (int)movementSpeed);
+            return new Rectangle((int)position.X + (int)movementSpeed, (int)position.Y, width - (int)movementSpeed * 3, (int)movementSpeed);
         }
 
         public Rectangle GetBoundsRight()
         {
-            return new Rectangle((int)position.X + width - (int)movementSpeed, (int)position.Y + (int)movementSpeed, (int)movementSpeed, height - 2 * (int)movementSpeed);
+            return new Rectangle((int)position.X + width - (int)movementSpeed, (int)position.Y + (int)movementSpeed, (int)movementSpeed, height - 3 * (int)movementSpeed);
         }
 
         public Rectangle GetBoundsLeft()
         {
-            return new Rectangle((int)position.X, (int)position.Y + (int)movementSpeed, (int)movementSpeed, height - 2 * (int)movementSpeed);
+            return new Rectangle((int)position.X, (int)position.Y + (int)movementSpeed, (int)movementSpeed, height - 3 * (int)movementSpeed);
         }
 
         public Rectangle GetBoundsFull()

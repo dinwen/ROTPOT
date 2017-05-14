@@ -30,7 +30,7 @@ namespace Rotpot.src.level.entities
         {
             //batch.Draw(level.resourceManager.images.GetImage("star"), position, new Color(Color.White, duration / 60f));
 
-            batch.Draw(level.resourceManager.images.GetImage("star"), position, null, new Color(Color.White, duration / 60f), 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.05f);
+            batch.Draw(level.resourceManager.images.GetImage("particle"), position, null, new Color(Color.White, duration / 60f), 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0.05f);
         }
     }
 }

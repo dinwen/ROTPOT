@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Svennebanan.utils;
 
 namespace Svennebanan
 {
@@ -14,11 +16,13 @@ namespace Svennebanan
 
         public ImageHandler images;
         public TileHandler tiles;
+        public AudioHandler audio;
 
         public ResourceManager()
         {
             images = new ImageHandler();
             tiles = new TileHandler();
+            audio = new AudioHandler();
         }
 
         public void LoadContent(ContentManager content)
@@ -52,7 +56,9 @@ namespace Svennebanan
             images.AddImage("circlebig", content.Load<Texture2D>("circlebig"));
             images.AddImage("circlebig1", content.Load<Texture2D>("circlebig1"));
             images.AddImage("smoke", content.Load<Texture2D>("smoke"));
+            images.AddImage("particle", content.Load<Texture2D>("particle 16x16"));
 
+            //tiles
             tiles.AddTile(new Tile(0, 0, new Rectangle(64, 0, 64, 64), true));
             tiles.AddTile(new Tile(1, 0, new Rectangle(0, 0, 128, 64), true));
             tiles.AddTile(new Tile(2, 0, new Rectangle(0, 0, 64, 64), true));
@@ -65,6 +71,21 @@ namespace Svennebanan
             tiles.AddTile(new Tile(5, 1, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(4, 2, new Rectangle(0, 0, 128, 128), true));
             tiles.AddTile(new Tile(5, 2, new Rectangle(0, 0, 128, 128), true));
+
+            //sounds
+            audio.AddAudio(0, content.Load<SoundEffect>("fly"));
+            audio.AddAudio(1, content.Load<SoundEffect>("myggadmg"));
+            audio.AddAudio(2, content.Load<SoundEffect>("myggadmg1"));
+            audio.AddAudio(3, content.Load<SoundEffect>("myggadmg2"));
+            audio.AddAudio(4, content.Load<SoundEffect>("pigmovementshort"));
+            audio.AddAudio(5, content.Load<SoundEffect>("pigdmg1"));
+            audio.AddAudio(6, content.Load<SoundEffect>("pigdie"));
+            audio.AddAudio(7, content.Load<SoundEffect>("pinmovement"));
+            audio.AddAudio(8, content.Load<SoundEffect>("pindash"));
+            audio.AddAudio(9, content.Load<SoundEffect>("pinlanding2"));
+            audio.AddAudio(10, content.Load<SoundEffect>("pinjump"));
+            audio.AddAudio(11, content.Load<SoundEffect>("pindeath"));
+
         }
 
     }

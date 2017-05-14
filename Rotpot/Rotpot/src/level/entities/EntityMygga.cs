@@ -18,13 +18,16 @@ namespace Rotpot.src.level.entities
         private Animation animation;
         public bool isRetreat;
 
+        float pan;
+        float movementSoundCooldown = 0;
+        int randomAttack = rdn.Next(1, 3);
+
         private float rotation;
 
         public EntityMygga(Vector2 position)
         {
             movementSpeed = 20;
             patrolSpeed = 3;
-
 
             health = 1;
             strength = 1;
@@ -56,9 +59,14 @@ namespace Rotpot.src.level.entities
 
         public override void Update(GameTime gameTime)
         {
+            pan = 1 / GetDistance(level.GetPlayer().GetPosition());
+
             CheckCollision();
 
-            if (!isRetreat) myggaAttack();
+            if (!isRetreat)
+            {
+                myggaAttack();
+            }
             else myggaRetreat();
 
             if (level.GetPlayer().GetPosition().X > 20000) Remove();
@@ -80,6 +88,7 @@ namespace Rotpot.src.level.entities
                 isRetreat = true;
             }
 
+            PlaySound();
             rotation = GetDirection(level.GetPlayer().GetPosition()) - MathHelper.ToRadians(180);
         }
 
@@ -99,6 +108,22 @@ namespace Rotpot.src.level.entities
             float xs = (float)Math.Cos(dir) * 10;
             float ys = (float)Math.Sin(dir) * 10;
             position += new Vector2(xs, ys);
+        }
+
+        public void PlaySound()
+        {
+            if (GetDistance(level.GetPlayer().GetPosition()) < 1000)
+            {
+                if (--movementSoundCooldown <= 0)
+                {
+                    movementSoundCooldown = 30f;
+                    level.resourceManager.audio.GetSound(0).Play(0.3f, 0.5f, 0);
+                }
+            }
+            if (GetDistance(level.GetPlayer().GetPosition()) < 50)
+            {
+                level.resourceManager.audio.GetSound(rdn.Next(1, 3)).Play(0.2f, 1, 0);
+            }
         }
     }
 }

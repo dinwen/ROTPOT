@@ -103,6 +103,8 @@ namespace Svennebanan
             audio.AddAudio(9, content.Load<SoundEffect>("pinlanding2"));
             audio.AddAudio(10, content.Load<SoundEffect>("pinjump"));
             audio.AddAudio(11, content.Load<SoundEffect>("pindeath"));
+            audio.AddAudio(12, content.Load<SoundEffect>("coinsound"));
+            audio.AddAudio(13, content.Load<SoundEffect>("mushroom"));
 
             font = content.Load<SpriteFont>("Score");
         }

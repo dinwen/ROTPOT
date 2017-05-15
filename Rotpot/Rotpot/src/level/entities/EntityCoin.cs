@@ -47,6 +47,7 @@ namespace Rotpot.src.level.entities
 
             if(GetDistance(player.GetPosition() + new Vector2(player.width / 2, player.height / 2)) <= 100)
             {
+                level.resourceManager.audio.GetSound(12).Play(0.7f, 0, 0);
                 Main.score += value;
                 Remove();
             }

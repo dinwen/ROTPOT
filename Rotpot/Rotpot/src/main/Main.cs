@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Rotpot.src.gui;
@@ -49,9 +50,10 @@ namespace Svennebanan
             camera = new Camera(GraphicsDevice.Viewport);
             camera.Zoom = 1f;
             input = new InputHandler();
-            level = new LevelOne(resources);
+            level = new LevelFive(resources);
 
             menu = new MainMenu(resources, new Vector2(), level);
+            SoundEffect.MasterVolume = 1;
         }
 
         protected override void LoadContent()

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+  <SourceFile>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/tiles.png</SourceFile>
+  <SourceTime>2017-03-02T11:31:51.3085073+01:00</SourceTime>
+  <DestFile>C:/Users/jonathan.runeke/Documents/ROTPOT/Rotpot/Rotpot/Content/bin/Windows/tiles.xnb</DestFile>
+  <DestTime>2017-05-14T13:55:51.1858765+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-30T08:36:08+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

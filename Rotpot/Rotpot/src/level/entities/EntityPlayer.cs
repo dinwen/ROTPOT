@@ -83,6 +83,7 @@ namespace Rotpot.src.level.entities
 
                 if (InputHandler.attack)
                 {
+                    
                     if (strength >= 100)
                     {
                         level.resourceManager.audio.GetSound(10).Play(1f, 0, 0);
@@ -95,9 +96,9 @@ namespace Rotpot.src.level.entities
             }
             else
             {
-                if (jumping)
+                if(jumping)
                 {
-                    level.resourceManager.audio.GetSound(9).Play(0.2f, 0, 0);
+                    level.resourceManager.audio.GetSound(9).Play(1f, 0, 0);
                 }
                 jumping = false;
                 jumpingAnim.Reset();
@@ -108,10 +109,11 @@ namespace Rotpot.src.level.entities
                 }
                 if (InputHandler.attack)
                 {
-                    level.resourceManager.audio.GetSound(10).Play(0.2f, 0, 0);
+                    level.resourceManager.audio.GetSound(10).Play(1f, 0, 0);
                     InputHandler.releaseJump = true;
                     InputHandler.attack = false;
                     velocity.Y = -23;
+                    position.Y -= 23;
                     for(int i = 0; i < 5; i++)
                     {
                         level.entityManager.AddEntity(level, new ParticleDust(new Vector2(position.X + width / 2, position.Y + height + 40), new Vector2(0, -0.4f), 0.5f));
@@ -190,8 +192,8 @@ namespace Rotpot.src.level.entities
 
             if (health <= 0)
             {
+                if(!dying) level.resourceManager.audio.GetSound(11).Play(1f, 0, 0);
                 dying = true;
-                level.resourceManager.audio.GetSound(11).Play(0.1f, 0, 0);
             }
 
             if(dying)
@@ -199,7 +201,6 @@ namespace Rotpot.src.level.entities
                 deathAnim.Update();
                 if (deathAnim.hasEnded)
                 {
-                    
                     this.Respawn();
                 }
             }

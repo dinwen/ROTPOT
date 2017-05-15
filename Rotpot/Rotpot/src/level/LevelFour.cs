@@ -13,6 +13,7 @@ namespace Rotpot.src.level
     {
 
         int stickCooldown = 60;
+        bool spawnedEnemies = false;
 
         public LevelFour(ResourceManager resources) : base(resources)
         {
@@ -41,6 +42,15 @@ namespace Rotpot.src.level
         {
             if (GetPlayer().GetPosition().X > 128 * 25 && --stickCooldown <= 0)
             {
+                if(!spawnedEnemies && GetPlayer().GetPosition().X > 128 * 59)
+                {
+                    spawnedEnemies = true;
+                    for(int i = 0; i < 10; i++)
+                    {
+                        entityManager.AddEntity(this, new EntityMygga(new Vector2(128 * 59, 128 * 50), 128 * 230));
+                    }
+                }
+
                 if (GetPlayer().moving)
                 {
                     if (GetPlayer().direction == -1)

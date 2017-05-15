@@ -81,6 +81,11 @@ namespace Svennebanan
             {
                 Main.level = new LevelFive(resourceManager);
             }
+            else if(levelID == 6)
+            {
+                levelID = 1;
+                Main.state = Main.STATE.Menu;
+            } 
 
         }
 

@@ -87,7 +87,7 @@ namespace Rotpot.src.level.entities
             {
                 level.GetPlayer().SetVelocity(new Vector2(level.GetPlayer().GetVelocity().X, -10));
                 Remove();
-                level.resourceManager.audio.GetSound(6).Play(0.5f, 0, 0);
+                level.resourceManager.audio.GetSound(6).Play(1f, 0, 0);
             }
 
             PlaySound();
@@ -116,7 +116,7 @@ namespace Rotpot.src.level.entities
                 if (--movementSoundCooldown <= 0)
                 {
                     movementSoundCooldown = 33;
-                    level.resourceManager.audio.GetSound(4).Play(0.5f, 0, 0);
+                    level.resourceManager.audio.GetSound(4).Play(1f, 0, 0);
                 }
             }
             if (GetDistance(level.GetPlayer().GetPosition()) < 120)

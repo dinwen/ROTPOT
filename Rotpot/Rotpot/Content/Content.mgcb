@@ -325,8 +325,6 @@
 /processorParam:TextureFormat=Color
 /build:stick.png
 
-
-
 #begin particle 16x16.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -339,4 +337,123 @@
 /processorParam:TextureFormat=Color
 /build:particle 16x16.png
 
+#begin fly.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:fly.wav
+
+#begin buzzingshort.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:buzzingshort.wav
+
+#begin buzzing.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:buzzing.wav
+
+#begin pinmovement.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pinmovement.wav
+
+#begin pinlanding2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pinlanding2.wav
+
+#begin pinjump.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pinjump.wav
+
+#begin pindeath1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pindeath1.wav
+
+#begin pindeath.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pindeath.wav
+
+#begin pindash.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pindash.wav
+
+#begin pigmovementshort.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pigmovementshort.wav
+
+#begin pigmovement.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pigmovement.wav
+
+#begin pigdmg1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pigdmg1.wav
+
+#begin pigdie.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pigdie.wav
+
+#begin myggadmg2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:myggadmg2.wav
+
+#begin myggadmg1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:myggadmg1.wav
+
+#begin myggadmg.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:myggadmg.wav
+
+#begin flytest1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:flytest1.wav
+
+#begin flytest.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:flytest.wav
+
+#begin coinsound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:coinsound.wav
+
+#begin mushroom.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:mushroom.wav
 

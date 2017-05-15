@@ -12,6 +12,9 @@ namespace Rotpot.src.level
     class LevelFive : Level
     {
 
+        private bool enemiesSpawned = false;
+        private int stickCooldown;
+
         public LevelFive(ResourceManager resources) : base(resources)
         {
             LoadLevel("Content/levels/Level5.txt");
@@ -37,27 +40,36 @@ namespace Rotpot.src.level
 
         public override void Update(GameTime gameTime)
         {
-            //if (GetPlayer().GetPosition().X > 128 * 25 && --stickCooldown <= 0)
-            //{
-            //    if (GetPlayer().moving)
-            //    {
-            //        if (GetPlayer().direction == -1)
-            //        {
-            //            entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-500, 1000) - 800, GetPlayer().GetPosition().Y - 2400)));
-            //            stickCooldown = 50;
-            //        }
-            //        else if (GetPlayer().direction == 1)
-            //        {
-            //            entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-1000, 500) + 800, GetPlayer().GetPosition().Y - 2400)));
-            //            stickCooldown = 50;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-500, 500), GetPlayer().GetPosition().Y - 2400)));
-            //        stickCooldown = 50;
-            //    }
-            //}
+            if (GetPlayer().GetPosition().X > 128 * 16 && --stickCooldown <= 0)
+            {
+                if(GetPlayer().GetPosition().X > 128 * 30 && !enemiesSpawned)
+                {
+                    enemiesSpawned = true;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        entityManager.AddEntity(this, new EntityMygga(new Vector2(128 * 30, 128 * 56), 128 * 210));
+                    }
+                }
+
+                if (GetPlayer().moving)
+                {
+                    if (GetPlayer().direction == -1)
+                    {
+                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-500, 1000) - 800, GetPlayer().GetPosition().Y - 2400)));
+                        stickCooldown = 50;
+                    }
+                    else if (GetPlayer().direction == 1)
+                    {
+                        entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-1000, 500) + 800, GetPlayer().GetPosition().Y - 2400)));
+                        stickCooldown = 50;
+                    }
+                }
+                else
+                {
+                    entityManager.AddEntity(this, new EntityStick(new Vector2(GetPlayer().GetPosition().X + random.Next(-500, 500), GetPlayer().GetPosition().Y - 2400)));
+                    stickCooldown = 50;
+                }
+            }
             base.Update(gameTime);
         }
 

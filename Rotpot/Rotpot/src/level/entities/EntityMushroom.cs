@@ -37,6 +37,7 @@ namespace Rotpot.src.level.entities
             health++;
             if (level.GetPlayer().GetBoundsBottom().Intersects(GetBoundsFull()) && level.GetPlayer().GetVelocity().Y > 0)
             {
+                level.resourceManager.audio.GetSound(13).Play();
                 level.GetPlayer().SetVelocity(new Vector2(0, -40));
                 animation.Reset();
             }

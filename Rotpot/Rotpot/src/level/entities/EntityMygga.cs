@@ -25,15 +25,19 @@ namespace Rotpot.src.level.entities
         int randomAttack = rdn.Next(1, 3);
 
         private float rotation;
+        private float retreatPos;
+        private Vector2 respawn;
 
-        public EntityMygga(Vector2 position)
+        public EntityMygga(Vector2 position, float retreatPos)
         {
+            this.retreatPos = retreatPos;
             movementSpeed = 30;
             patrolSpeed = 3;
 
             health = 1;
             strength = 1;
             this.position = position;
+            this.respawn = position;
             direction = 0;
 
             width = 128;
@@ -56,7 +60,7 @@ namespace Rotpot.src.level.entities
 
         public override void Reset()
         {
-            position = new Vector2(-350, 43 * 128);
+            Remove();
         }
 
         public override void Update(GameTime gameTime)
@@ -72,7 +76,6 @@ namespace Rotpot.src.level.entities
             }
             else myggaRetreat();
 
-            if (level.GetPlayer().GetPosition().X > 20000) Remove();
 
             //Attacking/ dealing dmg / close
             if (!isRetreat && GetDistance(level.GetPlayer().GetPosition()) < 50)
@@ -90,7 +93,7 @@ namespace Rotpot.src.level.entities
             {
                 avoidGround = true;
             }
-            if (level.GetPlayer().GetPosition().X > 20000) isRetreat = true;
+            if (level.GetPlayer().GetPosition().X > retreatPos) isRetreat = true;
 
             if (avoidGround)
             {
@@ -120,8 +123,8 @@ namespace Rotpot.src.level.entities
         {
             EntityPlayer player = level.GetPlayer();
             float dir = GetDirection(player.GetPosition());
-            float xs = (float)Math.Cos(dir) * 15;
-            float ys = (float)Math.Sin(dir) * 15;
+            float xs = (float)Math.Cos(dir) * 10;
+            float ys = (float)Math.Sin(dir) * 10;
             position += new Vector2(-xs, -ys);
             CheckCollision();
         }
@@ -130,8 +133,8 @@ namespace Rotpot.src.level.entities
         {
             EntityPlayer player = level.GetPlayer();
             float dir = GetDirection(player.GetPosition());
-            float xs = (float)Math.Cos(dir) * 10;
-            float ys = (float)Math.Sin(dir) * 10;
+            float xs = (float)Math.Cos(dir) * 6;
+            float ys = (float)Math.Sin(dir) * 6;
             position += new Vector2(xs, ys);
             CheckCollision();
         }
@@ -143,12 +146,12 @@ namespace Rotpot.src.level.entities
                 if (--movementSoundCooldown <= 0)
                 {
                     movementSoundCooldown = 30f;
-                    level.resourceManager.audio.GetSound(0).Play(0.3f, 0.5f, 0);
+                    level.resourceManager.audio.GetSound(0).Play(0.1f, 0.5f, 0);
                 }
             }
             if (GetDistance(level.GetPlayer().GetPosition()) < 50)
             {
-                level.resourceManager.audio.GetSound(rdn.Next(1, 3)).Play(0.2f, 1, 0);
+                level.resourceManager.audio.GetSound(rdn.Next(1, 3)).Play(1f, 1, 0);
             }
         }
     }

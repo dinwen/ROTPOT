@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,9 @@ namespace Svennebanan
         public static bool attack;
 
         public static bool releaseJump = false;
+        public static bool releaseShift = false;
+
+        
         
 
         public static bool escape;
@@ -23,6 +27,8 @@ namespace Svennebanan
 
         public void Update()
         {
+            GamePadCapabilities capabilities = GamePad.GetCapabilities(PlayerIndex.One);
+
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 right = true;
@@ -65,7 +71,7 @@ namespace Svennebanan
             }
             else
             {
-                releaseJump = false;
+                if(!capabilities.IsConnected) releaseJump = false;
                 attack = false;
             }
 
@@ -76,6 +82,49 @@ namespace Svennebanan
             else
             {
                 shift = false;
+            }
+
+
+            if (capabilities.IsConnected)
+            {
+                GamePadState state = GamePad.GetState(PlayerIndex.One);
+
+                if (state.IsConnected && state.ThumbSticks.Left.X <= -0.5f)
+                {
+                    left = true;
+                }
+                else
+                {
+                    left = false;
+                }
+                if (state.IsConnected && state.ThumbSticks.Left.X >= 0.5f)
+                {
+                    right = true;
+                }
+                else
+                {
+                    right = false;
+                }
+                if (state.IsConnected && state.Buttons.A == ButtonState.Pressed)
+                {
+                    if (!releaseJump) attack = true;
+                }
+                else
+                {
+                    releaseJump = false;
+                    attack = false;
+                }
+                if (state.IsConnected && state.Buttons.B == ButtonState.Pressed)
+                {
+                    if(!releaseShift) shift = true;
+                }
+                else
+                {
+                    releaseShift = false;
+                    shift = false;
+                }
+                
+
             }
         }
 

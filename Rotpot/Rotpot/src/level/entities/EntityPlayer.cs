@@ -135,6 +135,7 @@ namespace Rotpot.src.level.entities
                     dashAlpha = 1f;
                     dashDirection = direction;
                     InputHandler.shift = false;
+                    InputHandler.releaseShift = true;
 
                     for(int i = 0; i < 300; i += 10)
                     {
